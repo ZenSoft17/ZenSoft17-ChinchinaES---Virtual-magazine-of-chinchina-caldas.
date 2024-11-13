@@ -1,0 +1,62 @@
+/* styles for menu vertical  */
+.container-menu-vertical {
+  width: 25vw;
+  height: auto;
+  top: 8vh;
+  right: 0;
+  padding: 2vh;
+  background: var(--negro-mate);
+  border: 1px solid var(--gris);
+  border-radius: 1vh;
+  position: fixed;
+  z-index: 99999;
+  display: none;
+}
+
+.list-menu-vertical-revista,
+.item-menu-vertical-revista,
+.menu-vertical-display-flex-revista {
+  display: flex;
+}
+
+.list-menu-vertical-revista {
+  width: 100%;
+  flex-direction: column;
+  list-style: none;
+}
+
+.item-menu-vertical-revista {
+  align-items: center;
+  margin: 0.5vh 0 0.5vh 0;
+}
+
+.image-menu-vertical-revista {
+  width: 4vh;
+  margin: 0 1vh 0 0;
+  object-fit: cover;
+}
+
+.link-menu-vertical-revista {
+  font-size: 2.2vh;
+  font-weight: 500;
+  color: var(--gris);
+}
+
+/* responsive */
+@media screen and (min-width: 900px) {
+  .container-menu-vertical {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container-menu-vertical {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container-menu-vertical {
+    width: 50vw;
+  }
+}

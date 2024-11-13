@@ -1,0 +1,20 @@
+/* slogan component  */
+
+.span-slogan-dfc {
+  margin: 10vh 0 0 0;
+  padding: 0.3em 0.5em;
+  background: var(--blue-light);
+  font-size: 2.5vh;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--blanco);
+  box-shadow: 0.4em 0.4em 0.8em var(--shadow-naranja);
+}
+
+.image-slogan-dfc {
+  width: 3vh;
+  margin: 0 1vh 0 0;
+  object-fit: cover;
+}

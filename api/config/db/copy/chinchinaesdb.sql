@@ -1,0 +1,1067 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-09-2024 a las 19:26:37
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `chinchinaesdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calendar_activities`
+--
+
+CREATE TABLE `calendar_activities` (
+  `cal_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `cal_title` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calendar_activities_days`
+--
+
+CREATE TABLE `calendar_activities_days` (
+  `cald_id` int(11) NOT NULL,
+  `cal_id` int(11) DEFAULT NULL,
+  `cald_title` varchar(255) DEFAULT NULL,
+  `cald_text` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cast_time`
+--
+
+CREATE TABLE `cast_time` (
+  `cas_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `cas_hour_init` time DEFAULT NULL,
+  `cas_hour_end` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categories`
+--
+
+CREATE TABLE `categories` (
+  `cat_id` int(11) NOT NULL,
+  `typ_id` int(11) NOT NULL,
+  `cat_category` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`cat_id`, `typ_id`, `cat_category`) VALUES
+(3, 1, 'EsMulticultural'),
+(4, 1, 'EsNuestrosCuentos\r\n'),
+(5, 1, 'EsSaboresÚnicos\r\n'),
+(6, 1, 'EsArteInspirador'),
+(7, 1, 'EsRitmoDeLaVida'),
+(8, 1, 'Otros'),
+(9, 2, 'inauguración de la feria');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `certifications`
+--
+
+CREATE TABLE `certifications` (
+  `cer_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `cer_title` varchar(255) DEFAULT NULL,
+  `cer_text` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `codes`
+--
+
+CREATE TABLE `codes` (
+  `cod_id` int(11) NOT NULL,
+  `use_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contributors`
+--
+
+CREATE TABLE `contributors` (
+  `con_id` int(11) NOT NULL,
+  `typ_id` int(11) DEFAULT NULL,
+  `con_person_name` varchar(255) DEFAULT NULL,
+  `con_nickname` varchar(255) DEFAULT NULL,
+  `con_description` varchar(255) NOT NULL,
+  `con_image` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `elements`
+--
+
+CREATE TABLE `elements` (
+  `ele_id` int(11) NOT NULL,
+  `pub_id` int(11) DEFAULT NULL,
+  `typ_id` int(11) DEFAULT NULL,
+  `ele_text` text DEFAULT NULL,
+  `ele_image` longblob DEFAULT NULL,
+  `ele_video` longblob DEFAULT NULL,
+  `ele_datetime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `event_dfc`
+--
+
+CREATE TABLE `event_dfc` (
+  `eve_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `eve_title` varchar(255) DEFAULT NULL,
+  `eve_date` datetime DEFAULT NULL,
+  `eve_live` varchar(255) DEFAULT NULL,
+  `vie_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fair`
+--
+
+CREATE TABLE `fair` (
+  `fai_id` int(11) NOT NULL,
+  `fai_fair` varchar(255) DEFAULT NULL,
+  `vie_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `hashtags`
+--
+
+CREATE TABLE `hashtags` (
+  `has_id` int(11) NOT NULL,
+  `has_hashtag` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `hashtags`
+--
+
+INSERT INTO `hashtags` (`has_id`, `has_hashtag`) VALUES
+(4134309, 'HistoriaViva!'),
+(10320959, 'DescubreEs!'),
+(35634587, 'Mucho Mas! '),
+(46460586, 'TurismoHoy!'),
+(75559904, 'GuíaLocal!'),
+(83619720, 'CulturaViva!');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `image_bank`
+--
+
+CREATE TABLE `image_bank` (
+  `imb_id` int(11) NOT NULL,
+  `imb_image` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `info_dfc`
+--
+
+CREATE TABLE `info_dfc` (
+  `inf_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `inf_title` varchar(255) DEFAULT NULL,
+  `inf_description` text DEFAULT NULL,
+  `inf_general_objective` text DEFAULT NULL,
+  `vie_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `invited`
+--
+
+CREATE TABLE `invited` (
+  `inv_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `mod_id` int(11) DEFAULT NULL,
+  `inv_name` varchar(255) DEFAULT NULL,
+  `inv_profession` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `location`
+--
+
+CREATE TABLE `location` (
+  `loc_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `loc_title` varchar(255) DEFAULT NULL,
+  `loc_text` text DEFAULT NULL,
+  `loc_image` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modalities`
+--
+
+CREATE TABLE `modalities` (
+  `mod_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `mod_modality` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `projects`
+--
+
+CREATE TABLE `projects` (
+  `pro_id` int(11) NOT NULL,
+  `fai_id` int(11) NOT NULL,
+  `mod_id` int(11) DEFAULT NULL,
+  `sta_id` int(11) DEFAULT NULL,
+  `pro_title` varchar(255) DEFAULT NULL,
+  `pro_author` varchar(255) DEFAULT NULL,
+  `vie_id` int(11) NOT NULL,
+  `pro_image` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `projects_info`
+--
+
+CREATE TABLE `projects_info` (
+  `pri_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `pri_title` varchar(255) DEFAULT NULL,
+  `pri_text` text DEFAULT NULL,
+  `vie_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `project_registrations`
+--
+
+CREATE TABLE `project_registrations` (
+  `prj_id` int(11) NOT NULL,
+  `prj_email` varchar(255) DEFAULT NULL,
+  `prj_project_leader` varchar(255) DEFAULT NULL,
+  `prj_project_mentors` varchar(255) DEFAULT NULL,
+  `prj_exhibitors_info` text DEFAULT NULL,
+  `prj_project_name` varchar(255) DEFAULT NULL,
+  `prj_project_modality` varchar(255) DEFAULT NULL,
+  `prj_project_description` text DEFAULT NULL,
+  `prj_project_phase` text DEFAULT NULL,
+  `prj_project_design` text DEFAULT NULL,
+  `prj_project_development` text DEFAULT NULL,
+  `prj_project_image` longblob DEFAULT NULL,
+  `prj_project_implementation` text DEFAULT NULL,
+  `prj_project_evidences` longblob DEFAULT NULL,
+  `prj_institution_name` varchar(255) DEFAULT NULL,
+  `prj_foundation_date` date DEFAULT NULL,
+  `prj_institution_logo` longblob DEFAULT NULL,
+  `prj_technical_requirements` text DEFAULT NULL,
+  `prj_comments` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `publications`
+--
+
+CREATE TABLE `publications` (
+  `pub_id` int(11) NOT NULL,
+  `cat_id` int(11) DEFAULT NULL,
+  `use_id` int(11) DEFAULT NULL,
+  `pub_category_other` varchar(255) DEFAULT NULL,
+  `pub_name` varchar(255) DEFAULT NULL,
+  `pub_date` date DEFAULT NULL,
+  `pub_image` longblob DEFAULT NULL,
+  `vie_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registrations_dfc`
+--
+
+CREATE TABLE `registrations_dfc` (
+  `reg_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `reg_title` varchar(255) DEFAULT NULL,
+  `reg_description` text DEFAULT NULL,
+  `reg_general_info` text DEFAULT NULL,
+  `reg_start_date` date DEFAULT NULL,
+  `reg_end_date` date DEFAULT NULL,
+  `vie_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `rol_id` int(11) NOT NULL,
+  `rol_role` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`rol_id`, `rol_role`) VALUES
+(1, 'Autor'),
+(2, 'Administrador');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `schedules`
+--
+
+CREATE TABLE `schedules` (
+  `sch_id` int(11) NOT NULL,
+  `fai_id` int(11) NOT NULL,
+  `sch_date_init` time DEFAULT NULL,
+  `sch_date_end` time NOT NULL,
+  `sch_text` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `status`
+--
+
+CREATE TABLE `status` (
+  `sta_id` int(11) NOT NULL,
+  `sta_status` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `status`
+--
+
+INSERT INTO `status` (`sta_id`, `sta_status`) VALUES
+(1, 'green'),
+(2, 'yellow'),
+(3, 'red');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `stripe_dfc`
+--
+
+CREATE TABLE `stripe_dfc` (
+  `stp_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `stp_title` varchar(255) DEFAULT NULL,
+  `stp_description` text DEFAULT NULL,
+  `stp_live` text DEFAULT NULL,
+  `vie_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `themes`
+--
+
+CREATE TABLE `themes` (
+  `the_id` int(11) NOT NULL,
+  `fai_id` int(11) DEFAULT NULL,
+  `the_theme` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `types`
+--
+
+CREATE TABLE `types` (
+  `typ_id` int(11) NOT NULL,
+  `typ_type` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `types`
+--
+
+INSERT INTO `types` (`typ_id`, `typ_type`) VALUES
+(1, 'normal'),
+(2, 'especial'),
+(3, 'title'),
+(4, 'subtitle'),
+(5, 'text'),
+(6, 'hr'),
+(7, 'imagen'),
+(8, 'video'),
+(9, 'marca'),
+(10, 'ayudante');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `use_id` int(11) NOT NULL,
+  `rol_id` int(11) DEFAULT NULL,
+  `use_name` varchar(255) DEFAULT NULL,
+  `use_password` varchar(255) DEFAULT NULL,
+  `use_email` varchar(255) DEFAULT NULL,
+  `use_date` date DEFAULT NULL,
+  `use_image` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`use_id`, `rol_id`, `use_name`, `use_password`, `use_email`, `use_date`, `use_image`) VALUES
+(71065819, 2, 'Jhojan Esteban Lopez Rios ', '$2y$10$y/.KfMhuTD4jKt5B7INhxODAgF/V1GORwnGS8X92N0kgQdDJfvDWC', 'jhojanestebanlopezrios1234@gmail.com', '2024-08-29', 0x89504e470d0a1a0a0000000d49484452000001a6000001a6080600000037712003000000017352474200aece1ce90000200049444154785eed9d07b82d4595fdd74630e298461d51c7848a11731a1103e6aca3a823461c41d141cc011398038a3aea288a71308f209840c1880110c39831eba87f9d3167f6bfd7a32edc77df39f7749fd35dbdab7ad5f7ddefbed05db5ebb7eb9cd555bd6b97414504fa206000bc8f8a54870888c0d409f0eb442520017dcf07748a4c120111c84240c29405b31aa985801e18c6f4a4e88f493f67db12a69cb4d5960888800888c0420212a68588fabf40cf7dfd33558d22d095803e875d89e5bb5ec2948fb55a120111100111684140c2d402922e110111100111c84740c2948fb55a120111100111684140c2d402922e110111100111c84740c2948fb55a9a2001bd609fa0d327dae53ec7ba8469a28348dd1601111081a804244c513d23bb4440044460a204244c1375bcba2d02e511e873b1a8bcde4fc96209d394bcadbe8a800888400104244c053849268a800888c094084898a6e46df555044621a025b851b017dca884a960e7c97411100111a8918084a946afaa4f222002225030010953c1ce93e92220022250230109538d5e559f44400444a0600212a6829d27d345400444a0460212a61abdaa3e8980088840c1042a11a6f2c251cbb3b8e0512ed34540048a2250893015c55cc68a80088880086c4240c2a4e1210222200222108a808429943b64cc7204b430ba1c37dd250231090c2e4cfaca00c420e6e097552220023109b416267db9c674a0ac1201111081da08b416a6da3aaefe888008888008c42420618ae91759959180560332c2565322d0828084a905245d2202222002db10d013cd608342c2d412adc6604b50ba4c04444004562420615a11a06e1f8e801e068663ab9a45203201095364ef14679ba4a438978d6eb0c6cce82e0868c019c2a4b111d035324904444004a6494033a669fa5dbd1601111081b004244c615d23c344400444609a04244cd3f4bb7abd2401ad7a2f094eb78940070212a60eb074a90888800888c0f004aa15263dd90e3f78d482088880080c41a05a611a0296ea9c26013de44cd3efb5f73af2b89630d53efad43f11100111288c8084a93087c95c11100111a89d8084a9760f87ec5fe4458490c06494084c8a80846952ee566745400444203e0109537c1fc9421110011198140109d3a4dcadce8a800888407c02cb09935e11c4f7ecd8166a8c8ced01b52f02c512584e988aedae0c170111100111588640ce674d09d3321ed23d222002223034819c4a30745f3ad62f61ea084c978b80088880080c4b40c2342c5fd52e0222302881094f2b06e53a6ee5750893c6e6b8a348ad1742401f94421c357933eb10a6c9bb510044400444a01e02c308931eccea1921ea89088880086426308c3065ee849a13011110815209e8397e5bcf49984a1dcdb25b044440042a252061aad4b1ea9608888008944a40c254aae764b70888406002052ed0053259c2147868cb341110011198220109d314bdae3e8b80088840600212a6c0ce916922200222304502950bd3fc45d340cba9531c77eab308888008cc2550b930c9f3222002222002a511903095e631d92b0222303a01adb80ceb0209d3b07c55bb086c4a405f701a2022b02d0109934685088880088840280212a650ee903122200222200212a6b53150c29aca92362e799b3e1d22200222300a0109d328d8d5a808884064027a981bd73b12a671f9abf56004dcfddc00ced9f2e75c1bae3b1b803fb6fcf9c3faebccec37c150c81c11188d80846934f46a38370177df0ec0c5015c66c6cf6501ec0460cccfc4af017c67cecf69664631531181ea098cf921ac1eee681d9cf03a84bbfffd26c2f38f00ce3e9a5f566ff8a7f3440bc00fccecafab3731bb86090fa9a190aade4d084898343c8a2490663f570470cd753fd70070a1223bb4bad17f01f0df004e59f7f3052d11ae0eb6cf1a0617f8c11be893c6fcba244c7938ab951508b8fb39005c7d8300f1ef7c1fa4329f8003386d83589d6266ff2368221099808429b27726689bbb9f0fc0b50070f6b3361bda05c0f613c4315497b924b87e66c53f7fdbcc28642a22d09d40cf33b59e85a967ebbae3d11d8511484b72d703707b00b74b62d4f3b82c0cca38e6fe1cc007001ccddf66f6ab71cc50ab22306e0492f84f9480bb5f00c06d9210f137031654e210f81b804f25913ac6ccbe14c734593205027a325df3722193bd42ccdce6b3e3ee7c27b4362bba2100eef9a9b37041acae4fd60f001c9384ea3833fb7d9d8e53afa210a8ebe31385aaec40daa87acb342be212dd2584a50a027f02707c12a9f79919f75da98840af04244cbde29c7665e97dd12d003c00c05d013033824add044e06703880b798d92febeeaa7a9783004549c2948374e56db83b3329ecdd4476ed05e092957757dd9b4de0cf00de07e0f500de6f667c4fa54202a5aebf8fe83d09d388f04b6edadd770470af343bfaa792fb3249db877d0fc670f43703789d9971d3af8a0874222061ea846bda17bb3bc7cbda52ddddb45437edf1d0b2f727a5a5beb76aa9af25315da6a53c8d81c504dcfd52001e9296ea986f4e4504ba12e052df9149a4b84feaaca53e2d75756559fdf59a3155efe2e53be8ee376e8e6678428aacd358591ea5eedc9ac0f701bca8c9f4fe1a654cd7d09845a0ac2f1b3d596519c5ee7e47008f07a0774759884fb6915f0038b4d960fdf2bccb7cfa22893ee2ca12a6e8340bb6cfddb9e1f53e4990ae52705786377dd8c081e1ed8fd7c2ef387be22ccacc7e18cf3c59949bc06261d2c3456e9f646dcfddb9d788ef8f1edd4451e9fd5156fa6a6c03011eddf196e654e0e79ad9d74567ba04160bd374d954ddf394c5fbdf003c42b9eaaa7675899de39c94811214a8134bec806c5e8d808469357ec5ddedee3c3efcb16996749ee23a2083a746e0842450cc7cae32110212a68938dadd7706f06400ff02608789745bddac87c0a9cdbeb9e70178bbb24ad4e3d4793d913055ee6377e79112fc40337fdd76957757ddab9fc03701ec6b66c7d5dfd5e9f650c254a9efdd9db3a2fd013c05c0df55da4d756bba048ee2f836331e1daf521981acc2a400bf3ca327ed43e206c6cbe76951ad88403e02eba2f5994de2a5cdd95e0799d96ff259a096862690559886eeccd4eb77f75db85931e5b39b3a0ef57f3a049834f649cc6c6e66d42d95c20948980a7720cd4fa1dfcf04f03000db57d0257541049621c00089879ad96796b959f7c42120618ae38bce96a483f91ecaa50c0017ea5c816e10813a091cc12d1193c92251e13b120953a11f4c77df1dc02b00287d50a13e94d98312f803f73f0178be99fd71d0965479ef04244cbd231db6c27404c58b01f03c2495700494482f984b98c99cb3a7b707b34be66c4240c254c8f04887f43d12c0737440df0a4e936eac00afe85bb9efe9be66f63f45f76222c64b980a70744a23c4273e1d435180bf64620702791f14fe97014266c677502a81094898023b87a6b93b333670af8636c906f795cc2b86c0bb013cd8ccfeaf188b2766a88429a8c3ddfdc200de00e0b6414d9459225032012ee93dd0cc941c36a017254c019de2ee14a33737a77b5e30a07932696a04f22eb7e5a6cb030a0f30b3dfe66e58edcd272061ea6574f4b391c0ddcf0be0102e33f462962a5995004f56fdfdba1f8620affffbc6ff638a1c1e2572ee193f3c9071e3bf9f6f5503757f2f0418b9f72f66f6895e6a53252b139030ad8cb09f0adc9d810d0c70e079492ac313f839007e217d2ffddeeacf66f6b3e14dd8f20ef11c002e9d4e0fbed486df3c51f8923aa6248727707af31e97db309e6c667cc050199180846944f86cdaddcfc94d80e924d991ada9ae79e6503b19c029cdb11fdf5d132133fb5a493d75f78b6f102c6eaabe1680ab96d48f426ce5d8b88f9971cca88c4440c23412f8244ad704f0366501efc5099cf9ac89d0e7019c6a663feea5e6c095b8fbf5924851a8389eae13d8dc924c3bd0cc0e2ec9e09a6c95308de44d77df0bc06b019c7d24134a6d964b2e3c2c6e4d84f8fb6433e31e95c917773f5bb3247ce5756245c1ba06801d270fa73b808f00b87bf8b0f27e5e7177a733e01d12a601e1ceaa3a7d71705fd2c333375d7273bf00c0b0dea3f95b22d4cd9529d9eff501dc3efd50a854da11e04cfcd666f6f57697ebaa3e084898faa0d8b20e776706f0f700d8ade52d53be8c6bfcc72431fa8c9971a6a4d2030177bfd83a91da43b3a98550199d792f337bdfc22b75412f04420b534d335477dfb559ffe7c0be442f9eabaf129e407a6c12a3a3cc8c810b2a031370f71d00dc649d505d61e0264bad9ebbb9f8cee9693a8c7078178616a6e1bbbfa8857ea4d1ddf74c591c181aac721681bf02f8606273a499fd4970c625e0ee574afbe8fe05c03f8c6b4dc8d6395eef6966bf0e695d254649980674647a9ff44200fb0fd84c8955f3a4d137f2c7ccfe5f891da8dde634766f05e0fe4db8fd9d9bb38db8ad41e50c02df4eef9df85b651181259eef254c8ba02ef9ffee7efe2632ea48bd4f3a132097e6decad991995198540a21903292dc2b899432dc9fe137ce983873e20c4aa5670212a69e81b23a77e7064846907127ff940b97e628ce4c46cb68babf4d19460d7d77f7cb349b9599f1fe7e2963450ddd5ab60f7cefc4fd4ecf5ab602dd379b8084a9e791e1ee3c59960958991b6daae5d3498c8e30b35f4d1542cdfd4e075732ba9422f5cf0098e771aa85414d8cda63f49e4a0f04244c3d405cabc2ddf703f0b21eab2ca92a8673f39c9b679ad9974a325cb6ae46202df5ed0be0d1002eb25a6dc5defd4500373733eeb95b589678edb2b0ce9a2e9030f5e4cd26e7dd73013cbea7ea4aaa869175ffd9241a7d96362196e4b6256c5df06d9af23e3ea4c9c0feb8896e8b6046929b4e2115d612a3a7d32d12a64eb8b6bd382d69bc3ebd185eb1b6a26e6706e6c393203133b78a086c2190f646f11dd413015c6e6258f859d8c3cc28522a4b1290302d092e7d00b74f4958f95e692a856710fd0733a29bd94fa6d269f5b33b81940a89d17c4f02c080a0a9142ee771598fcb7b1596e11722254c4b0e1b776770c37f01e05e8f291486c7bea2495ff34233fbe5143aac3ef64320ad2a702fd453005cbb9f5ac3d7c2cf0b73ec9d18ded280064a9896704a7ad9cbf4393c72a0f6c210ef57a7b0580952edde1eb87fee7ecfe694df17a4f3a5066e6df4ea79e231b393bf7f744b0a33602b611a7e8256189d19e6a644ac1f0570b5f27bb3b0072700d8a7b483f516f64a178c4a200549304082c1423c6ebee6c2e0201e3cf88e9a3bd977df3463ea40d4dd79cc35cf68d9b9c36d255e7a1a80c79a19c3bf5544601002eece84c63cbdf9dedca95af19711bbb7b799bd6e109015565af158e8d75bee4e31fa58b3acc523036a2dbf6d0e2e7c3680172ba16aad2e8ed72f77e759515c2e6606fe9acbe3cd8c42acb2808084a9c51071772edb71f98ee729d558f844f7a6344bfa598d1d549f62134801120f4c0f46178d6ded4ad6bda4c986f2a8956a98c0cd12a6054e767726ade4cbcb5a53ae9c04e0a166c6df2a51094ce405700a2c3a10c0bf352275f6a8ee58d12e2ee971698f0f842a33084898361916ee7eddb47c5763caff3fa6fd257c82d307445f0fa108a473a1ded635c828debbaab9161d66667b87821ec81809d31c67b83b4ff2fc0c001e5f515b612ebb3dcdecabb5754cfde991c0c8b3b49441e2202e31373918b7ebb16751aa3ab8c9b8cfd9a1ca060212a61943c2dd776a8e9afe5c93e180bf6b2adc93c497af3c1efa2f35754c7da99780bbdf289de555e33132fb991937aeabac232061da301cd2017f9c2971c654536108f85e66f6a99a3aa5be4c8380bbef08e050000c90a8a970ad8fab17dae724619a3daed3c63f8684f3dd524de530008f3433e6b95311816209b8fb1d9b0338993479dc08d97e5f6671132ed317718fa44add7bdabaf9d7ddcfd6a4183ac6815b55348d64e8f7fdcdec03dd68e86a11884bc0dd79e6134f45be4d5c2b3b5bc643067733b3533adf59e10d157d07afe69d26d8e1addc81be5a2da1ee3e8acb1e6d0f2e0b65b98c11811604dc9d673f1dd2e4de3b4f8bcb4bb88459c9af6f66df2ec1d8216d94309d717ecc4bd2be892159e7aafb37000e30b3d7e66a50edcc22307248db449ce2ee9705704445cbef3ccfe97a66f6d389b8706637272f4ceefe9894edb88671c027addbeb24d91a5ca93eb4259096e1196d7a40db7b825ff765003732333e644eb24c5a98dc9d4b775cc2aba17c10c03dcd8ce7c0a888c0e408b8fb9ee9ddd3392ae8fc2700dcc2cc7852f4e4ca6485c9dd79c0df310018f45072617cd07378085b8c0c0e5ac2ea6d3009656794eece44b0ef03c0cce5a5972301dcd5cc4e2fbd235ded9fa430b9fb2e00981baef4b3607810196749fc20662bfabe3c0bb5bb5f7a1d78fef9bbfcbb996df9ad929f403a338d9f891be46fbdf7169f6f663cb76a526572c2e4ee14a32f36d9b42f57b8a7bf97de277da5f07e84343f090e8566ed875907d6ffbd8bdd6b22c5dffce1018c6b02767c978a746d3b02eebe7d934e8c414d0f6f7747e8abee64668cb29d4c99a230bdab11a6bb15ee616ec4e391cdff57783f4298bf6ed6f380e67893dd01dc34b36114290ad416c1323389554f0e70f7bd9a653d46a8969ca99ce7a45dd3ccbed51396f0d54c4a98dc7dffb4ef6120c7f4bb1d7c8e912f00f08429ae3bf7e9b424466309d1a2aeac17aae3b52cb808d7e6ffefeed706c01947c9877c32e132c5e94fabd128e3eec90893bb73bd99912ea5063bf07dd27d75dcf9f21fac7562f4b4e56bc97ee7daf2df1bccecf0ecad57d2a0bb5f389dab46912ab5bcb9d97ccb1960f56512c2e4ee176c1225f28983a94c4a2c5cb2bbb9d2957477dd3a31ba7f7a47d4bd9238779c3993924875778abb338cfc3dcd7136b7ed7e77983bf635b35785b1662043aa172677e7392e3c16fd2603311cba5ae6bbdbddccbe36744335d59f048933232ed7d55828529c453dfd8ccef5102bd94315d141a7a008ee5dbc47745be7d8c7e36a6e58fb89d35310a6e7022835dcf2071454bd6368ffd5ebee0c5ca020e50e60d8fc7b6eb8d78f1b04aad0afdb8c66bb3bbff77806d2be199bedb3a91f01b86acdc14f550b93bbdf3e6db6eb7350e4aa8b113814a59fe46ab0e4769220f13884f5fb8a4aee5257dbb70854d3ffc3f520d30e9dbb3f1bc013db5d1deeaa0f31bb7a8c4df5fdb3a95698dc9dfb94be0080078c955678f4f9cd94197cb1dbd2921d0529d60c69b1e9435da1195407b2c347ea7630a6fba5cf6c84a9a4409ed63dac5298d24b4e8a12333c94563edb440fee31e5048e6d1c5668845d9baef5750d058ac79e684fd402a2eefea0b4d7a9b4ef432e1073d6c4d95355a53447b482efee6f01709f5617c7ba88411acc0eced070953904b62cdb393ebae57dbfca2202cf382b4062d1a5d3fd7f7767300483229831a2a4c288dd6b981933c1742a91635daafb68a70cc33c9fa5b4f26e00f7323346dda8cc20a065bba5878596f75aa073778691339cbcb4ece49f694ea9ae212fe0995eaa4a98d27ea56f02e0bea5920a5f5a73d985537395d9a2c477489c51aa2c4f40b3a705ecdc7db7b411b7b453711f6666af5c7e68c4bab336617a13b323c442bcd09ac9ece65e4862ce05eecebd3a55bee45d96c90af771f6c4c01a653f9f3fde6e0ce0b8c2f2eb319fde2e66c650f2e24b35c2e4eeb700706c611e6132d65b99d9df0ab33b8bb95aba1b0cb396f616cf9cee9496f5b841bf94f26133e33973c597fcc234c01b377767483833235cbc208f9cd23c95ed6666bf2bc8e6e54dede8f7b42f494b77cb136f73a796f636a1e4ee0f4ed17a6d5846b986f93419fc5574c92f4c03e06a12347217f7c306a87aa82abfddac635f5ffb9466e395280d35ec66d6cb0db90fccda62418d3559229e01e0a90599fc0b00572cfdbba5786172f7eb3549193f53d0c0f96973a4fbf5ccecfb05d99ccd5477676e3b6e9855c9478067405d265f7365b5e4ee3ccf89b3a752ca116676ef528c9d6567d1c2d4a414e1e15f3cc175e7429cf01b003732b32f17626f5633254a59716f6c4c411173f0a744d0477333eba81eead6f81dcd8cc7cb17594a17a69212b4fe19c02dcc8c6742a96c20e0ee9c2505cd043e5c06d6600341e2345f9cce994e18e60a4d98b2c9c8e4caccce66c668bde24ab1c2e4eed700f0f9cd0ffe0bf385723a80bb9ad991c58d900c06bb3b831c94eb2e03eb164d489ce68bd3f99b59d3897c87d38263844b5e6366ff1ac190ae3614294ceece5368bf08e0ca5d3b3cd2f57b9bd96123b51dbad9d833a5d0e886344ee2345f9c766ad2867d0e007f97507896dbc74a3074bd8da50ad393003cab10d8af34b3922206b361d5c6d96ca89769684e4044c7b8ff655a0e7e8fbb5f1d00932d9790ba880f19572e2dff6671c2e4eedcabc4b38ab8e61bbd9c0ce006ca7fb7ad9b14121e7de86eb14fd17af3674e7b37fb265f53841781a79b19c3de8b29250ad3eb9857ae00c2bf4a4f2a3f2ec0d6ac264a94b2e25eb531ed739a2f4ea5a440e326fecb991903228a28450993bb5fb50922381540f434218cba60aaa1d252240d3e68254a83231ea20189d30caae9dc376670b9d210d07baeb3a8570aa509d331cd665aa6a68f5e0e6ef2df1d18ddc8dcf6a5dc77dfc9ddaedaeb8580d217cd1627eea1a438453f299bf938afd26cbcfd7a2fa361e04a8a112677bf11804f0ecca38fea1901c3eccd0c115759474061e1450f079d883b7f49ef8e004ad80af26e33bb7bc451b831a4a624613aa971feb522425d6713df275dcdcc7e19dcceece629022f3bf2211a5430c47c717a1180038680de739dd73533eeff0c5d8a10267767de271e7b1cb970aacc1c788cc453d97aa6a443feea19117adf34c397eece23d9b95a72c3b9ae8eb1dfff1366c6c3104397f0c2e4ee3b00f806804b8726093ccacc5e12dcc6ece6e9bd5276e4391ad4fba6d9e274d194bbf342399cb0421bcc42f35f2bdc3ff8ad2508d3fe000e599e4496c794e39a1c787b2c6f63b73b4bdae2a8f74add7c5bc8d57adf34c751ee7e07004705f7230320180811f680d2d0c2e4ee7f0780515c170cece8aa8e34ee93f324b2856779eee9d32bbdd575bc99ddacb7da2aaac8ddf9daa1d76327061866fb9ad9aba2628f2e4ccf01f084a8f0925dfb99190f2a54d940c0ddf950117d09567e5b9ec003cdecf0e56faff34e77e7521e6725ed97f406509e0574b9d9969b6e339da0dd6d9d27ac3015927ae8b36676fd3a3f5eabf54ac95957e357c8dd8ad29bbfa4b727802382fb3144aaa25992d583307553c2b68e2ae08b8de72b719d9679fb54d611a838bb03dfad1cdfa4c4fa5eea2effbee5c7ccbe9b023df85f6bb344fee6cfa5d2ef1a8ff65094de7c71e2bb26be738a5ac2a62aea4198fa675e48eaa1c799d90bfaef7df9355616f040e17943232cfc02e69f972e49b8284ebbc73d14b173f71408315f9818a5c725bdf375a69aef8690a98aa20ad3db00dc339f6f3ab7f40500d7891cd5d2b9473ddd5049c00367452798d9d37bc232b39a24543cb5f76943b693a16e0542cc1727fa97a733472d7f05708968095ec309537ab7f4fdc0895ae9c85dcdecbfa38eb431ed2a7cb6b4cdd3ff300bd55b7ba81281621a2e0abaca06024d3ab50f35e9d46e1918cc73cc8c67dc8529118589cb638f0943685b439e6666cf0c6cdf68a6153c5ba22071d3e8a81166ab0b54fed0ae75834db3a6f9b3269e21f7b5c0895e99426d2733fbd3685f1e1b1a0e254cee7e2e000c633c6f14401bece02c89b325ce9aea2a3d4c0d0a9c2d6d797f34f4925dd78192048acb7b5c062aa968d6345f9c788a75e46d25fb98d9aba30cb668c2b45f13fbffb2287066d87143333b31b07da3995660245ef850e70213df6ad6b4c927d0ddbf048067ca452ca701d8d9cc38ed1ebd84112677a72ddf6e9e602f333a95d9061c6966770e6adbe86615365b2ae60bb4b0e55145e86d2e4ccc94f191d13facf30db85db32ff3fd8beceb617165511388244c7702f0de85168f7301734aeda23d4bf3e17bf3783f8e6b3ab75a5c02d2d3dd2f6d8e8fc28ac8a2a17d4d9b8bd30700dcbaf3a8cd73c387cdec56799adabc9548c2f4d166f362d40d88af36b37d22382ca20d052d3915fb0e24bd77e267247a8aa7f04ba4637e860ad8a3796533fbea988cd876086172f7ab0338756c1873daff3dbf0cccece741ed1bddac4272e2152b4a6b0e4ee2c43d31511fe0d64c2d9ef5901faae0596d0e33b3bd87ec7f9bbaa3081377d6dfaf8dc1235c53dcd24f4e4685043d54f34559c8cca9987778393f2beb1e30183ece5466e71ca3fd056d32649ca1e3a39ec23dba30b9fb4500fc08004f80ecb7acbead83b324ce96386b52994120f8d31f2daeeec1a280c317b59c37ebdb625dd480bb473e3961f4bd9a1184e920004f09faad1f2ab63f22a3e0cb78d53eb9173053ad66963ac4e72ef85973dc4bca3445a3edd71c5598dcfdec00fe07c0058670fe8a7572aacd48bcb0a73caed8bf76b76f121bba7528f3ead3d37606b5beaa5a515ab72414390f5bf5fc5b8fc43917bafb239befbe97ae5acf40f78f7ad6d6d8c2741f006f1908ecaad5dec5cca286afafdab75eee8fbc8c674d3a875e3a19bc926c1191dd9f3bb49cb760ecb8fb0e00be1134d2f2d36676a3b186ffa81f5e773f1ac0edc6eafc26ed9e6866370c68572893022fe38dfab497d349c18321b49cb7589c788a024f538858fed1cc7e308661f38569e0edbdeecee53b06179c6d8c8e2f68730f333b2ea05da14ccab5a9b6e3c3fae49ed4036787a82ef0a4ef0f60ca78f395469caed477dd3dd477a0991ddc433d9dab186dc6e4ee0f07f0f2ce160f7fc3d7cd6c97e19b29bb85c05f862b3ca50ffc343690cb03ef6fd27ba6163e7777ee1b7a4d8b4b735ff22d33bb7cee46d9de98c2f469003718a3d30bda7c8099715f95ca2604b2bddbe8e685c97e11067d5008387b8df7f0d1848e9f03c08f015cb0db70cf72350f443d294b4beb1a194598dcfd12004659bb5c00f867cd93cbc5c70c93cc3d00966d2f68d2d615664bcb9288739f7c12c7175d2d09faa0c76e1c62660774edcfaad78f254c073627d4463c6cefc966f6ec55a14ee1fec5ef973abe195a1ddae4938706dddb349940945586b0bb73b6c45913674f910af7345d2cf771186309138fb7b86c24fa00fe90664bff1bccae90e62c16a6ec66eb0b104040bf2800a2e547c1ddf99e69f43c7533ccbda5991ddbb21bbd5c965d98dcfdda003edf8bf5fd56f24a33e32993ed4abca5ea7676f77055d027f3cb9819cf039a7409b89c37d9f77e5d07a2bb33328fa764472bd95723c610a64300ec1f8c3cd79d2e6766df096657487302be68cffec109e99833664ccc3ccee33116946c4badf50ad3000fa7eece83fa6eb3c87b99ffff37002e6a665c55ca52b20a538ad967fd8e9f8c00002000494441540a22266e8d548e32331e54a8d28240c017b50fb4edec70947254610bc6cb5e1230c16ba0c8bc0194645947cdb9cfdd6f09e0433d57db47757b9ad9dbfba8a84d1db985292af49b9ad9096d8095784ddf1fc780a988b48cb76e60065cce937f3a7c71b83b97f3a26db83dd2cceedca11b2b5d9a5b980e0770ff952ceeffe62f9ad9aefd575b6f8dd152114d252f5edb111570a975d261fc6dfdb6765d40ffd1b4bfa4e5bc2cc161d984c9dd7928165310edd8d551035f7fdf667773d444b203777db9ea830993de2f6d7063fbf74ccbf97f89bb244c1da0b93bcfa6fb2185a0c36d392ecd760c504e61dab33946e2881cf43ab441f5e74b3d3e0da8b424104c98aa0a47ee63d935e07b2685f2b7fc6cad9b353db7d9c2f2f88eb70d76790a95f9b899dd64b046d6559c53985e05e0a1393ad5a18dd798d9bf76b85e97c6db2ba32fbd19a332d87e26f9a8e33787bb5f05c0973bde96e3f2739a198f5f1fb4e414a6e39b30d6dd07ed4df7caab0e7ae88ea3dd1da37ce9cd8f6ed697de6c61e2d6874bb7f3e8e0575535ab1d9c566ac0ddbf08e06ab9da6bd9ce35cdec0b2daf5dfab29cc2c430f1486ba65cc3e579230a32ee387c4611a6f9362e7e7fd1c7fa584746635f1e2c324fc2b4c48070772ee571492f52b97773fac2e0af64b20893bb9f07c06f23d105f0fc66c3589835dc606ce69a13f0fd85429167cf98b8c9969b6d3b94c136dd4a983a7861ed5277bf2480ef8d790ac40cb3b3f8329730f134d84f2de19b216fd9d5cc385556e9406058615aea8b51c2345b985e0fe0011d5cdbfdd2f6ee52e46477ba5bee70f78f01d86dc9db87b8eded66c640b6414b2e61e2d9f19f1cb427dd2b3f5f93cefdd7dd6f9bf61dc30a5377b6dac3349bd9aa9ba0db6b4e2b9f49985a61daf6a2e688a0d73647043d78c9db87b8ad2a61620a22a64f8f54f4d27c096f441326004bcc98ea7fe9b4aa302d313436bb45c2b4045077df217d6f5e6089db87bae5d9cdf69a270f55f95abd59664c694afac760678d1c6b664c91a4d2814040615a1cfcd0a17f435f9a4b12b5d76c684f0e5fbfbb337fe77b876fa9530b591ee8730ad3c90de46b7642d0f3c51b9627f8571e80156d26d773affbafaeb8a8bcfe1184af51c214de450b0d6c8ec1785b730cc63d175e98f7821b370ff483bf96c9294c11211f60663c8643a5038160c294e509ae039e1097ca4721dcb0b411eeced46d4ce1c6546e910a33e5fc6c6883720ad353001c3474873ad6ff7933bb6ec77b267f79b02fbd2ce1aba5393d988ff4f0d0710035335e26bb66d2eb48e5ff99d98573189453987606f0cd1c9dead8c6e5cdec5b1def99f4e5c19689f4627dc3680cf81e50c2d4f11bc3dd3f0c608f8eb70d7df9abcd6c9fa11b61fdd984898d352ff3467fcf3403ea214dd8f8013960d7d2c6ccac023dc717776055ef09a91d20acbf34e0b1094505a82c897d89db6687c2b8fb65007c3bf7f7738b0edcc4cc3edee2ba952fc92d4c8f6e8ebd78e1ca56f75b018f0dbeb899f1b74a0b02c1d2dd043a21b505bc0c97040b15678f9708e91f0a54aeb8c8e5ed77f79701d86ff91a06b9336b0ab7dcc2c45c793f09f824a020880e6339e0d1ea7a225fe7bf604badd026e8f61f2e773f6fdabb74aef67765b9f2b94d56f1276669690c8170f7e300dc3c57075bb6c3a7814b99d9e92daf9ff4650185699ce5bc800fdf0197f134a3edf06d1134712b7b701533e391ef594ad619137be4ee0f0270581fbdebf9b5c63dccec9d7dd8557b1d014f48d5975f1a74011f1a149cd2f20b219d5cfb5dbe5a68794baecb4e35b36be46a8ced8c214c9caafe0200d36d442a9f3633e6f45359402060d4172dd672de190f7e91ce61a25f244c2dbf51dcfd3e00ded2f2f29c973dcecc5e90b3c1cec2d4c7ea85bb736672f7a53adaf33469830d3730b3cf2c65d7846e0a2a4c21bf00fbf8bc74195ac1f62fd174858ab774a0bb9f0ae0ea2d2fcf7519bf71796e1d5f77642b9d85a90fcb1a07dcb571c0bbfba8abaf3a92de65c99cdb97cd63d6132c328f28ce5ccecb2d0663fa617ddb9b47e30dfb44b70903cd645b0c90e6dd3b8fb6e01117d1ca28ef6fc712262ee371398fcb7a910a831f180491f5e9201280b6b6047c9741d343ce9ada325de5baa0b35845e4b574aabbbf07c05d5a5e9ef3b28798198fdec85a461126f6d0dd5f0360efacbd6dd7d88bccec31ed2e9dee55010320b6cc9ad2d2d1f153f34cc019eca41f14ba8cbfc01b6aff02e082cdf761f6d3c7c714a69b01f848170766ba961b6dffc1cc7e9fa9bd229b89fa843ec55953d087040953cb4fb6bb1fdaac203da2e5e5392f7bb7992d170bb0a295630a13dbe6665b6eba8d560e34b383a31915cd9ea04fe9c434a9f71a81fda0c087051f5a77e721aadf0b98459c96dfddcc468905184d98d2721e4310232e9bfd2e45a2fc329a1844b227f017e2282f6cc7f04de0d992de2fb51810815f6970f98ecb785ccecb5ec616a6cb026066ef51ed9843fd5033fbb7ec1e29a8c1c85f8acd98aafe388cc0cba95ac66bf13976f72b00f82a80ed5a5c9efb92979ad9feb91b5d6b6f744170f7a300dc612c009bb4cb27852b9a19372caacc2010fc8b9116572d4e8167ac64af65bcc5cb78ff05e0ce01bf5c189dbcf398df7d1184296a1004c7cb116676ef8003278c49c1bf1cab8dd20bce9de3335046f1301f97330d7177669919fc88f2257b3e5ad0439819130d71f7530064cdc5d4c161576f2253bed4e1fa495d1a7c398fbea038311882bfab28018fb5d8c875b2fbc9da0e30773f09c0b5da5e9ff9baddccec1399dbdcaab9d1674c4998eed73c61bd614c109bb47d5ce3a4682749864155c072de167132331ebe567c09983d7c16532de36d32d2dc9d1b69b9a13662f9a299ed3ab661518469fb66b32db32d440c1da78f6e63661f1cdb5951db2f6059a98a995321a244d65ac69bf36175f7b301e0f1110c7c8858ee6d66478c6d5808614ab3a6270388ba77e84b4d3c7fb4e48a638f9d33db2f60396fcdd66297f50a58be5b63ac65bccd674b0f01f01f613ebc5b1bf2a3b44d66f473e92209d30501fc18c039823a6d2f337b7350db46352b2de7bd1ec04d4735a45de314a73798d9d3db5d3eee5585b125ac496d6eee323adcfd9c69332d37d5c62b8ec7d976798fb79807218c30a559d32b01ec13cf635b2ce252e365c7da701694c9fa59d3039a04b814a7124a11e254a02855f32e6f8841ecee915785fec0572966c6946ca39768c21479c32d9df574337bc6e85e0b6840fa12fd6893abeed201cd9b6752d87d4e052d8fae67aba0873923adc9f0c05369bf09e05c413f1f2f33b34746b12d9430a559d3fb00dc3e0aa00d76fc9561ed66f695a0f68d6a56412fe7d7730a357b2a70967426cbe6a12ddcf7c9a81f88758dbbfbb1006e11c59e0d768cbea17623977003c9dd6f0ee0b8a00ea459dc73755d33fb5b601b4731ad90d0f1796c461528f7d32f0dd8d39ad0762e899658345b9a3f5b7a601354f0bac04e7d8f99dd2d927de18429cd9a184e79a548a036d8f258337b6160fb46332de801825d7850a0b8c47778979b96bd368939c588a2546cd16c69b6eb52f6f06f00385f3ee7763eadf82666f6f17cf62d6e29aa30dd9fe7ea2c367fb42bf8a2f0ca356513e88b64e1b3a6f51828503c70f084be456a9d18719c97f44e6ede30d16c69fe6c29f2ab095a1d6243ed467c5185899bd0f8a270a9ddfa9d9f1796fb56fe9899edbedcad75df55e8bba6cd9c4291e2cf0949ac187dd62ac5511221d64d0162387dd133a319902673c448d74fadbbdfa379807d7bd7fb325f7f27336322ed5025a4309190bbdfb359ce7b5b285adb1ab3af99bd2ab88dd9cd1bfd057ea627932456e4bb265c6b02c4df25ece9ea636c68dfd20c8acda9b4dc97c9876bfedea6e41ba29bbaf85366f64f7d0c82beeb082b4c499c3e07e03a7d77bac7fa7898d62e66c61dd3d5140e0a7e705629152de9ad82a1f67b95e5618e87ddfd4dcd5973f70d3e00ae6d662747b431ba30ddb809b10cf5526e86133f6c66b78ae8dcb16d2a288d4e7e54411e9957e9b8021e66d373778685333c3c72799799fd735403430b539a351d0de076510126bb94ae6886830add741b7ca885314f010fb3c7fc8e00be06801b6aa3166e75e14180adde938ed1891284e98a291b6fc4e387d77cc625bdab9ad9f7c67062e4362b0c84888c3b976d0a7898bf84f7ae26d22dd49ea019a6bed2cc1e966bb0b46b67eb1708e18529cd9a98832dfac6c32f02b89e99fda99d23a673d5acbd4d15ac644dc7815bf754f9f0e68bd2c301bc3cf8c0f85dcaf9f9b3c87696224c9748112eccce1bb91c66667b4736700cdb468fd21ba3d3f5b6a928bcd94b783c8df644003b0ce1fa1e1fe4c2e6875ccfad08614ab3a6e70178dc104eefb94ebd6f9afdc1e53e9eeff4cc5ad5e52550c4975a5e245bb6b630ab03b3d5ec94bbed8eed7196c41312386b0a5d4a12263a9fef7032a6f658ca775ccae3921e97f654d611d0fba6a28783de2bcd7ee0e277e88700ec5180771f6e66ff5e809d284698d2ace9d1004ac8514701653004832254b616271ed0575bf683da7d9cf9bd521f3be9f2b8c4dd9fcadc8a795a5ba91546e03112af88e4d3a50913d76f4f03c0774ed1cb51cde6b53b4537720cfb2a48f43a06b6b1dae4171a43c399375065eb87ac9ba41455257c8fdec3ccde598a034b00ba154b77dfab59277d63218095857cf6f207df379572147b21436d303315ec307b0cf37dd297e6a51c1acc1bcb557c72930fefdacbdd3ace5d250a136dfe3480eb8f83ac53ab3c589029e569afcad64f9b678a538f114762dc2f0189d26c516292e9cf0260245ef4c2a5bbeb98d917a21bbadebee28489c6bbfbe5017c19c0d90b80fd5300bb9a197fab6c2b4ea51dc73e151f4a94e678ba49d07a2880471432105e60662544336f85b348614ae2f47800cf1d6770747ec63f058edd6cbbf8619ab9792a6d516ee2adda53baa1f9a2c48dfe5c862ea13008eb0a66f6e7128c2d7ec6948489d369661fbf6621d03fd22c41dedaccb8bca7a29953d43120519a2f4a774fe72b454e8fb6defaddccec135107da6676153b634ae27415005c3bddbe10f8ef00b0a799ad7aaa4421dd6d6fa6664eed590d78a596efe68b12cfd7fa7041df3501f3e1b51fb9450b5312a783003ca57d9747bff21566b6dfe856043440a98b46758a4469be28ed0ae05300ce3daa87da37cef3e1784edcdc7d94cbef145bfecef6e6a3ac0db6b33ae6ee0c8060200403224a29079ad9c1a5189bd3ce244e5cc7d726dc3ce0b54f6913ceee7ed9148177a13ceee8a5953dccecb85e6a1aa992e2674c69d6c4d071866497d49fbdcdecb091fc1eba59895336f748943617a58b00f83c804b66f3c8ea0dbdc9cceeb77a35e3d6b0e417799ee95c17344d22c54300ecdfe59e91af3d1dc05dcdecc891ed08dbbc32440cea1ae5bedb5c94cedfe4bf63e000df6397527e9992b4feaa1483e7d9b9a430c5ebb6bb9f2b65f8e5c6cd520ac3386f516ae44c0ec80a8a1884b2b2846f2e4a3c5ee76300ae3b08fde12abda79931c0aaf8528d30d113eecedc552714e695df00d8ddcc4ed9b21019315e6f64bbb4b4d7db88d6d2dd0294eece6d28c734c10eb7ea8d7a9e8a8e36b33be4696af856aa12a6244eaf05f0e0e1d1f5dac2ff316dbe999dd46bad9555a6a5bd951caaa5bbc5a2c424d1ef6ede2b95f605cfa53b6ea40d7d2a6d97d15ba330f1bca6af03b868171001aee5e15db735b38f07b025ab095d2664eb43ca3be7dfc8daab308d7196f40633e371232a7308a4570147372b2e372b10d283ccac946c14adf056274c69d6c4cd700c972c6587f69ab378c8200322dedfca7b13be281d3ac890f292de29e6f698de25b520eeeee705702c0ff86c7179b44bde6d66cc485155a9529892388d984b6fa531c29445f7a9e525e64a24162fbd5094b4e7695b4e7a97d472e0b93bf7273191f0d55ade12e9b2af01b87693a4f5f7918ceac3966a8529891343b1efd807a8cc7570958afb9c5e97b9dd229b9b9b31627a6b7d5ab6eb3082ddfd6229fa6ee70eb745b99462747533fb761483fab4a37661da11c0293c52b84f6819eb7a9499bd24637b453795048acb7b9c454da948903a7a3b8d15868497b479767d2fef6e660cd4a8b2542d4c69d674a5b47bbb943c571b07da4166f6d46ea3af4b3841b79a4bb87a42e1e512a42506a4bbef92b69530b34389e5c566f6e8120d6f6bf319c254f9f798bbff73b383bbe48d67af04f07065256f3baccfb86e9d40ddbfb220090a12031b0eef464457bb3b8fc9e11134ccec506239b109d4b8b199f164da6a4bf533a635cf352f395f06a0e4acde6f0170bf66f6c454462a1d08248162a00405aad4653ecd8e3af87cd6a5eefe4f003e08e03c2b5635d6eddca774b5e5f62b9535fb989230f1cc263e6d5c7bac51d543bb7cd2e3da3237e4aa2c41208914b713ec5e80486d11a366b677b899f1cf2a4b1270f77d00bc14004f2328b17086c49912bfc3aa2f9311267ad2dd2fdeec133a15404929ec370e421e977c6733633f545624104ca8d68488591a8e5fb16bbafd8ccf3c8588d960f62a1cc8a402a126254c499c4add7cbbfe73c58db8f737b3b715fe610b67fe3aa1e2d2dfa5d2bb298e993e0b05883f6b791d25447dd24d75a570f0a30a5f25616faadc44bb99cb27274c499c1e07e079037c167257c950f2c7d4fe223437d459ed25c1e27f51b0d6679b58fb33458c8533dab5b27ef9edbb9a052df0648faf41dc7db7e67dccbb005c38c2f859c1866a37d14a98661070f73701b8ef0a0326caadccadc7f74e3f8f6290ec10813109b83bcf657b0100be578e5fe66f04ff29d32499d9f7e377a25f0b2739634ab326a6b77f5f1310719b7e918e52db4f98e142d9c94761af46831070f773a460913d8398b48a193c0ee74666f6e5552a29f5dec90a5312271e08c675fe1293376e1c733c7490698c38130c557a5ca109d52f19138780bb7329f5bd00768d63d5d296305fe6cda67c80e8a48529891337da7d1a007783d7505e05e0d1352676acc139ea43ff04dcfdb600fe13008fbca9a1dcc3ccde59434796edc3e4852989d34e003e0780bf6b28a701b89799b14f2b14cd755680a75b072690ce50e2dea4870cdc54ceeaf733b357e46c30625b12a6e41577bf62da805b6aaa928de38b1bf21879f87433fb4bc4c1279b44605902ee7efd6695e388ca524d3dbbf9ac3e79592635dd27615ae74d77e7bb26be73e2bba75aca9700ec69665fada543eac77409a40db30773b9bac083403773dc9b9b232c4adf04dcdbc094306d40e9ee8cd263b41ea3f66a29dc907b20801729d75e2d2e9d5e3fdcfd2a696f1257376a2a1f684e40b883f6239ee55209d38ce1edeedcdf142ebaad874fe2a7d2e9b8eb3781f650adaa1081e108b8fb76009ed86418e2595b3b0cd7d228357f96791bcdec8fa3b41eb45109d31cc7b8fb539a59d34141fdb68a59bf05708099bd66954a74af08e42090326e3042ade4e4cbf3507d1dc00d9494795b3c12a64d3e5deecee48f0fcef1011ca10d2e1f30df1e53e9ab88403802eece636a18c053ea219f9b31fd3180eb9a197fab6c202061da5c98b884f01e00771a72e4cccf483264ab5beae6f1194f6ff289bdc2ccb8a94f45044627e0eedc24fb6a008cbcabb1f073c79912674c2a33084898160c0b77e79a360fe9bb47c523e89b0eecbb9dd97115f7515d0b4ec0dd79d4f973d33959b57e37fd22657560b4acca1c022b387f3a9b2fdd9d9de5b2de832a1f49c734b3a8fdcdec9b95f753dd0b44203dfc1d00807b78ce1bc8b4be4d614ecb9b98d9b7faaeb8b6fa5610a6da502cee8fbb1fc22feec557167d0537e3f2187a6ecc6522491511188c80bbdf05c00b9b28d8cb0dd6488c8a29463737b31fc43027b61512a68efe71f7c7a7e5868e771677398fd1e013ec61dafb549cefc21beceecc4dc9bc8e3ce2bef6c2653b2665e5329e4a0b0212a61690365ee2ee5cd2e3d2de5c7e2306342cd1a34d6ff90a80879ad927fbae58f54d8f80bb5fb0c9d8f04c00fb54b6897d9e33f9b9b9ad561fba8df50a84699c775deece6088b716731859b77131ebea0f379b1b9f65666bc781af5ea36a980c0177e749b27c8ff430007f37918e7f8811bd66c6cc2b2a1d0854204c1d7adbf3a529dd3e8f6f3e57cf5547ae8ed923986cf2e8c846cab618049abd809700f0389e1536b1cfc9bb538e4a6dc35862284a989680b6fe1677bf01800fc67e0a1c6461f15400cf01f00ebd835a71105578bbbbef0ce0490098deabb634428b3cc6ac2a5cfee6074f65090212a625a06dbcc5ddafde84817ea48966bb500fd595560543cbb9f7e48ddaa45b9aebfab7d7ddaf961206dfbdb2ecdf6d612d38ba629c570f6d8d8f729d84a9274fb8fbe5011c0be01f7baab2b46a1806cbb0dfff5042cad25cb7babd69e58019ec6fb77a6dc5d6f008337b79b1d607325cc2d4a333d20bdef7579a70b22d29869973bfd7cb1589d41659b9d7b9fbadd392dd4dcaedc5ca96ff814b9666c6f74a2a3d109030f500717d15e9203386924ffdd0afdfa5b373ded0ec55f9689febed5a0ce979d076accedd774a698338c6b91f69ca8547c8dcdeccb8ad42a527026709933eed3d213da31a776758ec4b26f8e27716472ef3f17cabd72b1d4bafc32c5b65eecec8536e91b81f378b4ef4fdd146de1f4fe1e04cca3aa7e88b759941aa19d332d45ade93d6dd791aee148322e651fa0c00cea2de6a66bf6a8952978d4020e588a408518c18ccb0e30866446df2d074aed9dfa21a58b25d12a681bd97f671509c98ca5fe52c027f6edec51d9544eafd8ae88b3334dcfd3269df1143bda71acc33cf211cb7f733b3b7c5f1587d96489832f8d4ddcf91b244dc2d43732536c1a510ee926776f363cc8c01142a2d08f4b15094b27bdf3845d4ddb6d99b7695164d4fee12077e62c01dcdeca4c9753e7387254c1981bbfb63d39e1f1e40a8329b0037259e92448a118e276a036fff43c5dd2fbe4e88f6a8fcb8893e00528c98f34e0f4d7dd05c5087842903e4f54db8fbcdd3a9b853c917b62ae15fa6d914458a4b7efa625882a8bb6fdfecb3e3ac883322fe7023ac4a3b020cdcd9dbccb88ca79281c00484a98fc58e7e3de1ee3c7b86b9e6aed86fcdd5d7c6d914cfb5f96c13a2fbb9f473b236f46eebf79412e8bacd385bfbb9168073573f42faed20cf267b9499bda2df6a55db22021310a64508c6f97f776784d39b9b65ab3b8f634155ad7e0100975a28562799d9e7abeadd82cea4001b0a0ff3365e27fdaef924d841dd9b324b72667e173363d26295cc04244c99816f6ccedd1f00e0a5b193c08e0ca97bf37f6cbe5428566bb32aceb0bed1e726dfee26f57347738af2f992f0ac9f0d5dac9fda554b22c065636672e032b2ca0804244c23409f214e976212d42611ec94d3ba0ced099e89f3e3f4f323006b3ffcb7b53fff70acb373d29ea18b026050027f985d61d69f2f3034a809d7cf7d75fb9bd9e1136610a2eb12a6106e38c30877e7416a2f0a64d2144d61e83a85ea67cd3942bfdff0c39c684cb5c4dfb3fe8f2fc7cf93dee5f07dceda0fb326acfffbfa3f73c9ed924984a6c83b4a9f793ac003cc8c594a54462620611ad90133664f5702f01600d70c669acc11811a09f021e389000ead61a9b716074998027a3285f6f208812703385b4013659208d440800133f752fec678ae9430c5f3c99916b93b5f7073f6c4b39e54444004fa21c0e3ce0f6e1efa0ed2e6ed7e80f65d8b84a96fa23dd7e7eee76cde4f3c1fc07e00e4af9ef9aabac911f83a803dcdecd4c9f5bca00eeb8bae1067b9fb2d52c253466aa9544320ed9aa9a63f613b42d0dc96f1786570c8e8a325f31b0c2b4c4b1a95115b514db93bd31871173ab33eab888008b423c048bb7b9bd927db5daeabc62630a030499586726e9a3dbd5ca7870e45f8ac7a359f199e71e716da3b851bad5fdc1cd6f92c336378bf4a21040614a64208146aa6bb335a6fdfe6bdd3339a50d70b16da0d992d024311782780c798198f3e57298c8084a930876d3437a5a8392889143348ab88c0940930a8e1e15ab62b7b084898caf6df99d6bbfb2e00b8bcc720091511981a0166ea780a80d76aa36cf9ae973095efc3ad7ae0ee7748698dae5059d7d41d1198458069a00e05f04c33fb8d10d54140c254871f378a1397f41e09e0a900988dbaaed2fee5775dfdeed49b49403a329d97745a2734412f56b8d8598e9130051da47d98e5ee7f9f76b83fa479a2d471ee7d40551d11087c0dc03e66764204636443ff04244cfd330d57a3bb5f25ed7fda3d9c71324804da13f8459384ff69005e65667f6b7f9bae2c8d8084a9348fad606fdafff404007bac508d6e1581dc047e02e02500feddcc7e9bbb71b5979f8084293ff3d15b74771ea9f1240077d312dfe8ee9001f3097c0bc00b01bc5e6984a6354c244cd3f2f756bd75f79d017006b51780b32f856212efd89722a39b9627700a80e7017887b27f2f0fb1e43b254c257baf27dbddfd62001e0de0a1cd13ea8e3d55ab6a44a02b81e3013cd7cc3ed8f5465d5f170109535dfe5ca937ee7efe74bc0643cd2fbc5265ba5904da11e09cfbbd691f12674a2a22a0f37d3406b625e0eee702f060e61a6bd6f72f254622300081bf00782bb733e804d901e8165c25674b9a3115ecc0a14d4f89626f0de04100eeb8f47ba8a10d55fd2511f86f06330078a399318d908a086c4340c2a441d18a80bb338339cf81a248eddaea265d24026710f8557344cb1129baee338222028b08841226a5e458e4ae18ffefeed74802751f00178a6195ac0846e074001f49b3a37799d99f82d92773021308254c8139556cdaf28f03eebe03803b037820002ef9f18ca81e8a62d07b80385615cc5b77387fcc8c27c7aa8840670212a6cec874c32c02eefe0f00ee9f44ea8aa2342902bf03f0ae343b3a41c74e4ccaf7837456c23408d66957eaee5705c0e3376e0fe086fdcda4a6cd3558ef391b3a06c0d1008e35b33f04b34fe6144c40c254b0f34a30dddd2f00e03649a4f85befa44a70dcb6363269ea8949888e36b32f96d90d595d02010953095e5a68e3f2ef891656dde305eecea3376e90448ab32945f7f5c87780aa7ed9f8eb03498cde6f66ff3b401baa5204b6212061d2a098492087d49dee7e313b637f14458a47c29f47ee189d0067425c9ee3cfa795ab6e747f4cd20009d324dd1eafd3eece24b2375b379bba6c3c2babb4e8f7008e4b42f43e33fb5195bd54a78a2220612aca5dd331d6dd776a72a8f1780eee99e26ffe48ac561b02bf06f08526c49f39e9d67e7fc5ccfeba5ab5f9efce31a3cfdf2bb5b84640c2a4b1500c0177ffbb0d4245b1ba72936f6dfb623a91cf501eae47015a2f42a729943b9f03d4d2f204244ccbb3d39d0108a4254086a7afcdaaf89b411553795fc5ddc83c506f4d84b687e00970000004ce49444154fc561eba008353262c4d40c2b4343add189980bb5f04c025d6fd5c72c3dff97fe78cdc07004cebc344a73f5cf7c3fd43ebfffe439dee1adc8b32af330109536764baa11602eefef71b84eba200ce9d048ba2b5e887c783ac5db376c022379afe71c1cfbc6b188e7da6e898d9778767adb735c333560b5d0948985a13d307b8352a5d28022220022b109030ad004fb78a8008888008f44f40c2d43f53d5280222200222b0020109d30af074ab088880088840ff04244cfd33558d2220021323a037d0fd3a5cc2d42f4fd5260222200222b0220109d38a0075bb088840210434ad29c4518084a918574537549ffae81e927d22500a81a284495f7da50c2bd9290222909540655f8e4509535647ab311110011110815108489846c1ae4645202e81ca1ebee382966573094898343844400444406a1c6a0c489842b943c62c24a02f908588748108944e607561d21745e96340f68b80088c4140df9d5aca1b63dca94d111001111081ee04569f31756f537788c00004f4f8390054552902a31090308d825d8d8a8008888008cc232061d2d81081920968a2d8b3f704b467a04b5527615a0a9b6e120111100111188a80846928b21bead5735826d06a460444a0780212a6e25da80e88800888405d04244c75f953bd1101111081e20948988a77a13a200222b039012da4973642244ca5796c62f6ea2b65620e6fd35d0d8a36948abe46c254b4fb64bc08888008d44740c2549f4fd52311c84840d3978cb027d394846932ae564745400444a00c0212a632fc242b45400444603204244c9371b53a2a022220026510903095e127592902222002932120619a8cabd551111001111896405fa13012a661fd3460ed7d0d81014d54d522200222b00481a284495fc54b7858b76427a0719a1db91aac8c4051c254197b75470444400444600601099386850894464053b2d23c267b3b1290307504a6cb454004444004862520611a96af6a170140331c8d82d2088c3c66254ca50d18d92b02223087c0c8dfa6f24b6f04fa13268d89de9ca28a44400444a03702057e37f7274cbd51544522d03781023f997d23507d22501001095341ce92a92220022230050212a62978597d1401111081820848980a72964c1501111081291090304dc1cbeaa308888008144440c25490b3a66aaa4217a6ea79f57baa04244c53f5bcfa2d0222200241094898823a466689800888c054094898a6eaf90dfdd672990682088840140212a6289e901d2220022220025b084898341044a06a0299e6c2999ac9e7aaea3a940f5d0f2d552b4c1a563d8c0e55210222909980beb93463ca3ce4d49c0888800888c06202d5ce9816775d57888008888008442420618ae815d92402222002132620619ab0f3d57511100111884840c214d12bb24904444004264c40c23461e7abeb222002221091c0b6c2a468c5887e924d222002223019029a314dc6d5eaa808888008944140c254869f64a5088880086c4da0e2d52d099306bb0888800888402802e50853c54f07a146848c1101111081910994234c238352f322200222200279084898f270562b2220022220022d0948985a82d26522200222200279084898f270562b2220022220022d0948985a82d26522200222200279084898f270562b2220022220022d0948985a82d26522200222200279084898f2701eb195f91bc0b4356c44b7d4d6b406536d1e1db53fff1f2b6b3aa86aba03970000000049454e44ae426082);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `video_bank`
+--
+
+CREATE TABLE `video_bank` (
+  `vib_id` int(11) NOT NULL,
+  `vib_video` longblob DEFAULT NULL,
+  `vib_size` varchar(255) NOT NULL,
+  `vib_type` varchar(255) NOT NULL,
+  `vib_extension` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `view_`
+--
+
+CREATE TABLE `view_` (
+  `vie_id` int(11) NOT NULL,
+  `vie_view` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `view_`
+--
+
+INSERT INTO `view_` (`vie_id`, `vie_view`) VALUES
+(1, 'si'),
+(2, 'no');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `calendar_activities`
+--
+ALTER TABLE `calendar_activities`
+  ADD PRIMARY KEY (`cal_id`),
+  ADD KEY `fai_id` (`fai_id`);
+
+--
+-- Indices de la tabla `calendar_activities_days`
+--
+ALTER TABLE `calendar_activities_days`
+  ADD PRIMARY KEY (`cald_id`),
+  ADD KEY `cal_id` (`cal_id`);
+
+--
+-- Indices de la tabla `cast_time`
+--
+ALTER TABLE `cast_time`
+  ADD PRIMARY KEY (`cas_id`),
+  ADD KEY `fai_id` (`fai_id`);
+
+--
+-- Indices de la tabla `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`cat_id`),
+  ADD KEY `typ_id` (`typ_id`);
+
+--
+-- Indices de la tabla `certifications`
+--
+ALTER TABLE `certifications`
+  ADD PRIMARY KEY (`cer_id`),
+  ADD KEY `fai_id` (`fai_id`);
+
+--
+-- Indices de la tabla `codes`
+--
+ALTER TABLE `codes`
+  ADD PRIMARY KEY (`cod_id`),
+  ADD KEY `use_id` (`use_id`);
+
+--
+-- Indices de la tabla `contributors`
+--
+ALTER TABLE `contributors`
+  ADD PRIMARY KEY (`con_id`),
+  ADD KEY `typ_id` (`typ_id`);
+
+--
+-- Indices de la tabla `elements`
+--
+ALTER TABLE `elements`
+  ADD PRIMARY KEY (`ele_id`),
+  ADD KEY `pub_id` (`pub_id`),
+  ADD KEY `typ_id` (`typ_id`);
+
+--
+-- Indices de la tabla `event_dfc`
+--
+ALTER TABLE `event_dfc`
+  ADD PRIMARY KEY (`eve_id`),
+  ADD KEY `fai_id` (`fai_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `fair`
+--
+ALTER TABLE `fair`
+  ADD PRIMARY KEY (`fai_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `hashtags`
+--
+ALTER TABLE `hashtags`
+  ADD PRIMARY KEY (`has_id`);
+
+--
+-- Indices de la tabla `image_bank`
+--
+ALTER TABLE `image_bank`
+  ADD PRIMARY KEY (`imb_id`);
+
+--
+-- Indices de la tabla `info_dfc`
+--
+ALTER TABLE `info_dfc`
+  ADD PRIMARY KEY (`inf_id`),
+  ADD KEY `fai_id` (`fai_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `invited`
+--
+ALTER TABLE `invited`
+  ADD PRIMARY KEY (`inv_id`),
+  ADD KEY `fai_id` (`fai_id`),
+  ADD KEY `mod_id` (`mod_id`);
+
+--
+-- Indices de la tabla `location`
+--
+ALTER TABLE `location`
+  ADD PRIMARY KEY (`loc_id`),
+  ADD KEY `fai_id` (`fai_id`);
+
+--
+-- Indices de la tabla `modalities`
+--
+ALTER TABLE `modalities`
+  ADD PRIMARY KEY (`mod_id`),
+  ADD KEY `fai_id` (`fai_id`);
+
+--
+-- Indices de la tabla `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`pro_id`),
+  ADD KEY `mod_id` (`mod_id`),
+  ADD KEY `sta_id` (`sta_id`),
+  ADD KEY `fai_id` (`fai_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `projects_info`
+--
+ALTER TABLE `projects_info`
+  ADD PRIMARY KEY (`pri_id`),
+  ADD KEY `fai_id` (`fai_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `project_registrations`
+--
+ALTER TABLE `project_registrations`
+  ADD PRIMARY KEY (`prj_id`);
+
+--
+-- Indices de la tabla `publications`
+--
+ALTER TABLE `publications`
+  ADD PRIMARY KEY (`pub_id`),
+  ADD KEY `cat_id` (`cat_id`),
+  ADD KEY `use_id` (`use_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `registrations_dfc`
+--
+ALTER TABLE `registrations_dfc`
+  ADD PRIMARY KEY (`reg_id`),
+  ADD KEY `fai_id` (`fai_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`rol_id`);
+
+--
+-- Indices de la tabla `schedules`
+--
+ALTER TABLE `schedules`
+  ADD PRIMARY KEY (`sch_id`),
+  ADD KEY `fai_id` (`fai_id`);
+
+--
+-- Indices de la tabla `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`sta_id`);
+
+--
+-- Indices de la tabla `stripe_dfc`
+--
+ALTER TABLE `stripe_dfc`
+  ADD PRIMARY KEY (`stp_id`),
+  ADD KEY `fai_id` (`fai_id`),
+  ADD KEY `vie_id` (`vie_id`);
+
+--
+-- Indices de la tabla `themes`
+--
+ALTER TABLE `themes`
+  ADD PRIMARY KEY (`the_id`),
+  ADD KEY `fai_id` (`fai_id`);
+
+--
+-- Indices de la tabla `types`
+--
+ALTER TABLE `types`
+  ADD PRIMARY KEY (`typ_id`);
+
+--
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`use_id`),
+  ADD KEY `rol_id` (`rol_id`);
+
+--
+-- Indices de la tabla `video_bank`
+--
+ALTER TABLE `video_bank`
+  ADD PRIMARY KEY (`vib_id`);
+
+--
+-- Indices de la tabla `view_`
+--
+ALTER TABLE `view_`
+  ADD PRIMARY KEY (`vie_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `calendar_activities`
+--
+ALTER TABLE `calendar_activities`
+  MODIFY `cal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96740918;
+
+--
+-- AUTO_INCREMENT de la tabla `calendar_activities_days`
+--
+ALTER TABLE `calendar_activities_days`
+  MODIFY `cald_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80060962;
+
+--
+-- AUTO_INCREMENT de la tabla `cast_time`
+--
+ALTER TABLE `cast_time`
+  MODIFY `cas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99234008;
+
+--
+-- AUTO_INCREMENT de la tabla `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `certifications`
+--
+ALTER TABLE `certifications`
+  MODIFY `cer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91438369;
+
+--
+-- AUTO_INCREMENT de la tabla `codes`
+--
+ALTER TABLE `codes`
+  MODIFY `cod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99783592;
+
+--
+-- AUTO_INCREMENT de la tabla `contributors`
+--
+ALTER TABLE `contributors`
+  MODIFY `con_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94712269;
+
+--
+-- AUTO_INCREMENT de la tabla `elements`
+--
+ALTER TABLE `elements`
+  MODIFY `ele_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92567592;
+
+--
+-- AUTO_INCREMENT de la tabla `event_dfc`
+--
+ALTER TABLE `event_dfc`
+  MODIFY `eve_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84534741;
+
+--
+-- AUTO_INCREMENT de la tabla `fair`
+--
+ALTER TABLE `fair`
+  MODIFY `fai_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95227780;
+
+--
+-- AUTO_INCREMENT de la tabla `hashtags`
+--
+ALTER TABLE `hashtags`
+  MODIFY `has_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93465665;
+
+--
+-- AUTO_INCREMENT de la tabla `image_bank`
+--
+ALTER TABLE `image_bank`
+  MODIFY `imb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98197660;
+
+--
+-- AUTO_INCREMENT de la tabla `info_dfc`
+--
+ALTER TABLE `info_dfc`
+  MODIFY `inf_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89524144;
+
+--
+-- AUTO_INCREMENT de la tabla `invited`
+--
+ALTER TABLE `invited`
+  MODIFY `inv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92529903;
+
+--
+-- AUTO_INCREMENT de la tabla `location`
+--
+ALTER TABLE `location`
+  MODIFY `loc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94620700;
+
+--
+-- AUTO_INCREMENT de la tabla `modalities`
+--
+ALTER TABLE `modalities`
+  MODIFY `mod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96165875;
+
+--
+-- AUTO_INCREMENT de la tabla `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99325105;
+
+--
+-- AUTO_INCREMENT de la tabla `projects_info`
+--
+ALTER TABLE `projects_info`
+  MODIFY `pri_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92250036;
+
+--
+-- AUTO_INCREMENT de la tabla `project_registrations`
+--
+ALTER TABLE `project_registrations`
+  MODIFY `prj_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `publications`
+--
+ALTER TABLE `publications`
+  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98056950;
+
+--
+-- AUTO_INCREMENT de la tabla `registrations_dfc`
+--
+ALTER TABLE `registrations_dfc`
+  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99697151;
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `rol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `schedules`
+--
+ALTER TABLE `schedules`
+  MODIFY `sch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87891354;
+
+--
+-- AUTO_INCREMENT de la tabla `status`
+--
+ALTER TABLE `status`
+  MODIFY `sta_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `stripe_dfc`
+--
+ALTER TABLE `stripe_dfc`
+  MODIFY `stp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77716700;
+
+--
+-- AUTO_INCREMENT de la tabla `themes`
+--
+ALTER TABLE `themes`
+  MODIFY `the_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61082054;
+
+--
+-- AUTO_INCREMENT de la tabla `types`
+--
+ALTER TABLE `types`
+  MODIFY `typ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `use_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98041841;
+
+--
+-- AUTO_INCREMENT de la tabla `video_bank`
+--
+ALTER TABLE `video_bank`
+  MODIFY `vib_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98704081;
+
+--
+-- AUTO_INCREMENT de la tabla `view_`
+--
+ALTER TABLE `view_`
+  MODIFY `vie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `calendar_activities`
+--
+ALTER TABLE `calendar_activities`
+  ADD CONSTRAINT `calendar_activities_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`);
+
+--
+-- Filtros para la tabla `calendar_activities_days`
+--
+ALTER TABLE `calendar_activities_days`
+  ADD CONSTRAINT `calendar_activities_days_ibfk_1` FOREIGN KEY (`cal_id`) REFERENCES `calendar_activities` (`cal_id`);
+
+--
+-- Filtros para la tabla `cast_time`
+--
+ALTER TABLE `cast_time`
+  ADD CONSTRAINT `cast_time_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`);
+
+--
+-- Filtros para la tabla `categories`
+--
+ALTER TABLE `categories`
+  ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`typ_id`) REFERENCES `types` (`typ_id`);
+
+--
+-- Filtros para la tabla `certifications`
+--
+ALTER TABLE `certifications`
+  ADD CONSTRAINT `certifications_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`);
+
+--
+-- Filtros para la tabla `codes`
+--
+ALTER TABLE `codes`
+  ADD CONSTRAINT `codes_ibfk_1` FOREIGN KEY (`use_id`) REFERENCES `users` (`use_id`);
+
+--
+-- Filtros para la tabla `contributors`
+--
+ALTER TABLE `contributors`
+  ADD CONSTRAINT `contributors_ibfk_1` FOREIGN KEY (`typ_id`) REFERENCES `types` (`typ_id`);
+
+--
+-- Filtros para la tabla `elements`
+--
+ALTER TABLE `elements`
+  ADD CONSTRAINT `elements_ibfk_1` FOREIGN KEY (`pub_id`) REFERENCES `publications` (`pub_id`),
+  ADD CONSTRAINT `elements_ibfk_2` FOREIGN KEY (`typ_id`) REFERENCES `types` (`typ_id`);
+
+--
+-- Filtros para la tabla `event_dfc`
+--
+ALTER TABLE `event_dfc`
+  ADD CONSTRAINT `event_dfc_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`),
+  ADD CONSTRAINT `event_dfc_ibfk_2` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `fair`
+--
+ALTER TABLE `fair`
+  ADD CONSTRAINT `fair_ibfk_1` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `info_dfc`
+--
+ALTER TABLE `info_dfc`
+  ADD CONSTRAINT `info_dfc_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`),
+  ADD CONSTRAINT `info_dfc_ibfk_2` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `invited`
+--
+ALTER TABLE `invited`
+  ADD CONSTRAINT `invited_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`),
+  ADD CONSTRAINT `invited_ibfk_2` FOREIGN KEY (`mod_id`) REFERENCES `modalities` (`mod_id`);
+
+--
+-- Filtros para la tabla `location`
+--
+ALTER TABLE `location`
+  ADD CONSTRAINT `location_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`);
+
+--
+-- Filtros para la tabla `modalities`
+--
+ALTER TABLE `modalities`
+  ADD CONSTRAINT `modalities_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`);
+
+--
+-- Filtros para la tabla `projects`
+--
+ALTER TABLE `projects`
+  ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`mod_id`) REFERENCES `modalities` (`mod_id`),
+  ADD CONSTRAINT `projects_ibfk_2` FOREIGN KEY (`sta_id`) REFERENCES `status` (`sta_id`),
+  ADD CONSTRAINT `projects_ibfk_3` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`),
+  ADD CONSTRAINT `projects_ibfk_4` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `projects_info`
+--
+ALTER TABLE `projects_info`
+  ADD CONSTRAINT `projects_info_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`),
+  ADD CONSTRAINT `projects_info_ibfk_2` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `publications`
+--
+ALTER TABLE `publications`
+  ADD CONSTRAINT `publications_ibfk_1` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`cat_id`),
+  ADD CONSTRAINT `publications_ibfk_2` FOREIGN KEY (`use_id`) REFERENCES `users` (`use_id`),
+  ADD CONSTRAINT `publications_ibfk_3` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `registrations_dfc`
+--
+ALTER TABLE `registrations_dfc`
+  ADD CONSTRAINT `registrations_dfc_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`),
+  ADD CONSTRAINT `registrations_dfc_ibfk_2` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `schedules`
+--
+ALTER TABLE `schedules`
+  ADD CONSTRAINT `schedules_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`);
+
+--
+-- Filtros para la tabla `stripe_dfc`
+--
+ALTER TABLE `stripe_dfc`
+  ADD CONSTRAINT `stripe_dfc_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`),
+  ADD CONSTRAINT `stripe_dfc_ibfk_2` FOREIGN KEY (`vie_id`) REFERENCES `view_` (`vie_id`);
+
+--
+-- Filtros para la tabla `themes`
+--
+ALTER TABLE `themes`
+  ADD CONSTRAINT `themes_ibfk_1` FOREIGN KEY (`fai_id`) REFERENCES `fair` (`fai_id`);
+
+--
+-- Filtros para la tabla `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`rol_id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

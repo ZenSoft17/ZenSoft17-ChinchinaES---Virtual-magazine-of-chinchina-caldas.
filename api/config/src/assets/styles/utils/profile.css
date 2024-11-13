@@ -1,0 +1,108 @@
+.container-profile {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  z-index: 999;
+  transition: width 0.5s ease, height 0.5s ease;
+  background: var(--negro-mate);
+}
+
+.container-image-profile,
+.container-profile {
+  display: flex;
+}
+
+.button-close-profile {
+  width: 6vh;
+  height: 6vh;
+  background: transparent;
+  border: none;
+  top: 1vh;
+  right: 1vh;
+  padding: 0.5vh;
+  z-index: 1;
+}
+
+.input-image-profile,
+.label-image-profile,
+.button-close-profile {
+  cursor: pointer;
+}
+
+.container-image-profile,
+.image-profile,
+.input-image-profile {
+  width: 100%;
+}
+
+.input-image-profile,
+.image-profile {
+  height: 100%;
+}
+
+.image-profile {
+  object-fit: cover;
+}
+
+.container-image-profile,
+.button-close-profile,
+.label-image-profile {
+  position: absolute;
+}
+
+.container-image-profile {
+  height: 40%;
+  top: 0;
+  z-index: 0;
+  justify-content: center;
+}
+
+.label-image-profile {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  background: var(--blanco) url("../../img/file.png") center / 80% no-repeat;
+  z-index: 9;
+  bottom: -5vh;
+}
+
+.input-image-profile {
+  opacity: 0;
+}
+
+/* events  */
+.profile-change {
+  width: 30%;
+  height: 100vh;
+  padding: 0 1vh 2em 1vh;
+}
+
+/* responsive  */
+
+@media screen and (max-width: 1000px) {
+  .container-profile {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container-image-profile {
+    height: 30%;
+  }
+  .container-profile {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container-profile {
+    width: 100%;
+  }
+}

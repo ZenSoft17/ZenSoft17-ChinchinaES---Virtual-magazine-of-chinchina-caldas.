@@ -1,0 +1,46 @@
+GUIA - para el mantenimiento de ChinchinaES.
+
+INTRODUCION
+- ChinchinaES es un aplicativo web el cual busca crear un medio de reunion virtual empleando los conceptos de transmedia.
+1 . ChinchinaES posee dos herramientas una revista digital y un punto para la feria de la cultura digital.
+
+ChinchinaES : la revista ChinchinaES es un medio donde autores de toda la region hacen sus publicacion en las categorias de 
+              cultura, historia, arte, musica y gastronomia y adicion una categoria especial que es editable por el admin.
+        
+Digital Culture Fair : la zona de la feria de la cultura digital ofrece informacion editable por el admin, la cual se divide en 5 zonas
+                       Introducion,evento,inscripciones,proyectos,franja virtual.
+
+                       cada zona incluye imagenes editables, videos, un contados y la posiblidad de enlazar directos.
+
+                       lo mas destable, se podria decir es que existe un sistema que hace que posible guardar el historial de 
+                       cada feria, permite mostrar cualquier feria en cualquier momento, lo mas recomendable es mostrar la ultima
+                       los meses de la feria y cuando la feria acabe desativar desde el admin hasta el año entrante.
+
+ChinchinaES - Dashboard : el panel de administracion donde se controla todo el sitio.
+
+    - layout : sistema de edicion para que los escritores creen y editen publicacione para la revista ChinchinaES.
+    - Dashboard : sistema de gestion de todo del sitio, donde se puede administrar la informacion de usuarios, publicidad, la digital culture fair, 
+      la categoria especial, los hashtags de la feria, banco de imaganes y banco de videos.
+
+FASES
+
+- ChinchinaES Consta de varias fases creacion de frontend, backend y base de datos:
+
+ - Backend : el backend para ChinchinaES es API que puede ser consumida desde cualquier sitio desde que cuente con los permisos
+             necesarios, el backend incluye el panel de administracion y el layout donde escritores agregat y editan publicaciones.
+
+ - Frontend : en el frontend de ChinchinaES se puede visualizar la revista en modo letura y la feria de la cutura  digital, es el punto donde 
+              se solicitan y llevan todos los datos del consumidos del api, tiene 2 zonas la feria de cultura digital y la revista ChinchinaES,
+              se carateriza por su diseño personalizado. 
+
+ - base de datos : en la base de datos se manejan varios procesos se almacena informacion de la feria y todas su variantes, hashtags de la feria,
+                   banco de images, banco de videos, publiciddad y gestion de la revista.
+
+
+DETALLES 
+
+LENGUAJES : PHP,JAVASCRIPT,SQL,GIT 
+HERRAMIENTAS DE MAQUETACION : HTML5, CSS3
+ENVIO DE DATOS : JSON
+LIBRERIAS : REACT JS, PHPMAILER, FPDF 
+

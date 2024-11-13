@@ -1,0 +1,184 @@
+/*  section admin css  */
+
+.sub-container-admin,
+.container-admin,
+.image-png-admin,
+.left-menu-admin,
+.container-button-admin,
+.navbar-admin,
+.container-title-admin {
+  width: 100%;
+}
+
+.left-menu-admin,
+.container-admin {
+  background: var(--negro-mate);
+}
+
+.container-admin {
+  height: 100vh;
+}
+
+.container-admin,
+.sub-container-admin:nth-child(1) {
+  overflow: hidden;
+}
+
+.left-menu-admin,
+.container-admin,
+.navbar-admin,
+.container-title-admin,
+.item-left-menu-admin {
+  display: flex;
+}
+
+.sub-container-admin,
+.image-png-admin,
+.left-menu-admin,
+.sub-container-admin:nth-child(2) {
+  height: 100%;
+}
+
+.sub-container-admin:nth-child(1) {
+  width: 20%;
+}
+
+.sub-container-admin:nth-child(2) {
+  width: 100%;
+  overflow: auto;
+}
+
+.title-left-menu-admin,
+.sub-container-admin:nth-child(2) {
+  color: var(--blanco);
+}
+
+.left-menu-admin {
+  position: relative;
+  flex-direction: column;
+  border-right: 0.5px solid var(--gris);
+}
+
+.item-left-menu-admin,
+.container-title-admin {
+  align-items: center;
+}
+
+.container-title-admin {
+  height: 10vh;
+  justify-content: center;
+  border-bottom: 0.5px solid var(--gris);
+}
+
+.container-button-admin,
+.close-left-menu-admin,
+.logo-png-admin {
+  position: absolute;
+}
+
+.container-button-admin {
+  bottom: 0;
+}
+
+.logo-png-admin {
+  left: 1vh;
+}
+
+.navbar-admin,
+.close-left-menu-admin {
+  display: none;
+}
+
+.close-left-menu-admin {
+  top: 1.5vh;
+  right: 1vh;
+}
+
+.image-png-admin,
+.logo-png-admin {
+  object-fit: cover;
+}
+
+.logo-png-admin,
+.button-admin,
+.close-left-menu-admin {
+  width: 7vh;
+  height: 7vh;
+}
+
+.title-left-menu-admin {
+  margin: 0 2vh 0 0;
+  font-size: 3vh;
+  font-weight: 700;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.list-left-menu-admin {
+  list-style: none;
+  margin: 2vh 0 2vh 0;
+}
+
+.image-png-item-admin {
+  width: 4vh;
+  margin: 0 2vh 0 0;
+}
+
+.item-left-menu-admin {
+  font-size: 2.5vh;
+  margin: 2vh 0 2vh 1vh;
+  color: var(--gris);
+}
+
+.button-admin,
+.close-left-menu-admin {
+  background: transparent;
+  border: none;
+  padding: 1vh;
+  cursor: pointer;
+}
+
+.button-admin {
+  display: block;
+}
+
+.navbar-admin {
+  justify-content: end;
+}
+
+/* events */
+.display-none-admin {
+  display: none !important;
+}
+
+/* responsive  */
+@media screen and (max-width: 1100px) {
+  .sub-container-admin:nth-child(1) {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .sub-container-admin:nth-child(1) {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sub-container-admin:nth-child(1) {
+    width: 0;
+    transition: width 1s ease;
+  }
+
+  .sub-container-admin-change {
+    width: 80%;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .close-left-menu-admin,
+  .navbar-admin {
+    display: flex;
+  }
+}

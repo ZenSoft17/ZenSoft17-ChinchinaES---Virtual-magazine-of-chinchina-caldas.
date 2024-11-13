@@ -1,0 +1,42 @@
+/* login css  */
+
+.container-login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--negro-mate);
+}
+
+.sub-container-login,
+.container-login {
+  overflow: hidden;
+}
+
+.sub-container-login {
+  width: 30%;
+  height: 60%;
+  border: 0.5px solid var(--gris);
+  border-radius: 2vh;
+}
+
+@media screen and (max-width: 900px) {
+  .sub-container-login {
+    width: 50%;
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sub-container-login {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sub-container-login {
+    width: 90%;
+    height: 80%;
+  }
+}

@@ -1,0 +1,14 @@
+lista de errores api y frontend
+
+1 - ErrorDB : la conexion con la base de datos fallo, termino o no se encontro
+2 - MethodError : el metodo no es permitido
+3 - OriginError : el origen de la solictud no es permitido
+4 - JsonInvalid : Los datos son en formato json
+5 - DataErrorPost : los datos no fueron recibidos
+6 - DataErrorGet : los datos son fuero envios
+7 - DataTypeError : el tipo de dato es invalido
+8 - JsonError : Los datos son en formato json
+9 - ApplicationError : Error al subir, generar o cargar un dato de la base de datos, lo que perjudica el correcto funcionamiento de la aplicacion
+10  DontExistData : No existen datos para ese contenido en la base de datos
+11 MissingKey : la llave enviada no coincide con ningun candado
+12 IncorrectValue : el valor no es el esperado

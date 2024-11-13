@@ -1,0 +1,67 @@
+REQUERIMIENTOS TECNICOS Y SABERES PREVIOS -
+
+- Bases solidas en logica de programacion, solucion de problemas y habilidades tecnicas con herramientas :
+
+- Frontend con HTML5, CSS3, JAVASCRIPT, JSON
+   - librerias para frontend : REACT JS, NPM Y ADPTABILIDAD PARA EL USO DE CUALQUIER LIBRERIA SIMPLE CON JAVASCRIPT.
+
+- Backend con php 
+   - liberias para backend phpmailer y adaptabilidad para el uso de sub librerias con php.
+
+- BASES DE DATOS con SQL y el motor MYSQL O MARIADB
+  
+FRONTEND :
+
+js y php :
+
+- tipos de datos
+- tipos de variables 
+- estructuras de control 
+    - ciclos
+    - condicionales 
+    - operadores
+- funciones 
+- funciones asincronomas
+- propms
+- objectos 
+- Programacion orientada a objectos
+    - clases 
+    - atributos
+    - propiedades 
+
+js :
+
+- manejo de api desde el lado del cliente 
+- manejo de la libreria react js de un forma media o avanzada
+
+php : 
+
+- conocimientos en creacion de api rest full desde 0 con php.
+- procesamiento de bases de datos sql con php
+- conocimientos sobre tipos de politicas cors y origenes 
+- protecion de consultas sql contra ataques de inyecion de codigo sql
+
+Git :
+
+- manejo de gestion del contenido en un repositorio en github o donde se quiera.
+
+JSON : 
+
+- manejo de resivir y enviar datos en json 
+
+- No importa si no se cumple con las expectativas solo es cuestion de querer estudiar y mejorarse a si mismo.
+
+- NOTAS :
+
+- Tener cuidado con la base de datos :
+
+- hay datos en tablas de la base de datos que se llaman internamente en el codigo y si esos datos no estan especificamente en la base de datos el codigo no va funcionar correctamente
+
+- Tablas fijas y inamovibles :
+
+- roles
+- categories 
+- codes 
+- types 
+- view_
+- status

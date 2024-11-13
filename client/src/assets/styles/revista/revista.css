@@ -1,0 +1,57 @@
+/* styles for revista */
+
+.container-revista,
+.title-revista {
+  color: var(--blanco);
+}
+.container-revista {
+  width: 100%;
+  background: var(--negro-mate);
+}
+
+.title-revista,
+.text-revista {
+  text-align: center;
+}
+
+.title-revista {
+  font-size: 8vh;
+}
+
+.text-revista {
+  font-size: 2.5vh;
+  color: var(--gris);
+}
+
+/* responsive  */
+@media screen and (max-width: 800px) {
+  .title-revista {
+    font-size: 7vh;
+  }
+
+  .text-revista {
+    font-size: 2.2vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .title-revista {
+    font-size: 6vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title-revista {
+    font-size: 5vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title-revista {
+    font-size: 4vh;
+  }
+
+  .text-revista {
+    font-size: 2vh;
+  }
+}

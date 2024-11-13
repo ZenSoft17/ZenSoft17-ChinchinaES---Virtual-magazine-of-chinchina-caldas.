@@ -1,0 +1,60 @@
+/* form css  */
+
+.form-form,
+.group-form,
+.input-form {
+  width: 100%;
+}
+
+.form-form {
+  height: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-form,
+.input-form,
+.submit-from,
+select option {
+  color: var(--blanco);
+}
+
+.title-form {
+  font-size: 4vh;
+}
+
+.group-form,
+.title-form,
+.submit-from {
+  margin: 2vh 0 2vh 0;
+}
+
+.input-form,
+.submit-from {
+  background: transparent;
+  border: 0.5px solid var(--gris);
+  border-radius: 2vh;
+}
+
+.input-form {
+  padding: 0.5em;
+  outline: none;
+}
+
+select option{
+  background: var(--negro-mate);
+}
+
+.label-form {
+  font-size: 2vh;
+  color: var(--gris);
+}
+
+.submit-from {
+  padding: 0.5vh 2vh;
+  font-size: 2.5vh;
+  cursor: pointer;
+}

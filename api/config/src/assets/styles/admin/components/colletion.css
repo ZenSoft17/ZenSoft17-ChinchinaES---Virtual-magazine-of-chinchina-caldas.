@@ -1,0 +1,151 @@
+/* colletion styles */
+
+.container-nav-colletion {
+    height: 8vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-nav-colletion,
+.content-colletion,
+.image-element-colletion,
+.container-shadow,
+.image-colletion,
+.element-collection {
+    width: 100%;
+}
+
+.container-nav-colletion,
+.form-select-gender,
+.element-collection {
+    display: flex;
+}
+
+.form-select-gender {
+    width: 10vw;
+    height: 3vh;
+}
+
+.select-gender {
+    width: 60%;
+    background: transparent;
+    border: 0.5px solid var(--blanco);
+    color: var(--blanco);
+    outline: none;
+}
+
+.submit-gender {
+    width: 40%;
+    cursor: pointer;
+    background-color: var(--blanco);
+    border: none;
+}
+
+.select-gender,
+.submit-gender,
+.image-element-colletion,
+.container-shadow,
+.image-colletion,
+.element-collection {
+    height: 100%;
+}
+
+.content-colletion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, auto);
+    gap: 10px;
+}
+
+.container-element {
+    height: 60vh;
+    z-index: 1;
+    position: relative;
+}
+
+.edit-element-colletion,
+.delete-element-colletion,
+.book-element-colletion {
+    width: 4vh;
+    height: 4vh;
+    top: 1vh;
+    z-index: 5;
+}
+
+.edit-element-colletion,
+.delete-element-colletion,
+.book-element-colletion,
+.image-element-colletion,
+.container-shadow,
+.element-collection {
+    position: absolute;
+}
+
+.edit-element-colletion {
+    right: 6vh;
+}
+
+.delete-element-colletion {
+    right: 1vh;
+}
+
+.book-element-colletion {
+    right: 12vh;
+}
+
+.image-element-colletion {
+    z-index: 2;
+}
+
+.element-collection {
+    z-index: 4;
+    padding: 0.4em;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.image-element-colletion,
+.image-colletio {
+    object-fit: cover;
+}
+
+.collection-title,
+.collection-author,
+.collection-text {
+    color: var(--negro-mate);
+}
+
+.collection-title {
+    font-size: 2.5vh;
+}
+
+.collection-author {
+    font-size: 1.9vh;
+}
+
+.container-shadow {
+    z-index: 3;
+    box-shadow: inset 0 100px 150px var(--shadow-50), inset 0 -100px 150px var(--shadow-50);
+}
+
+@media screen and (max-width: 1150px) {
+    .content-colletion {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container-nav-colletion {
+        display: block;
+    }
+    .form-select-gender {
+        width: 90vw;
+        margin: 2vh 5vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-colletion {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

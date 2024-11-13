@@ -1,0 +1,148 @@
+/* Publications Revista */
+.section-publications-revista,
+.container-publications-revista,
+.imagen-publications-revista,
+.container-controls-publications-revista,
+.image-control-publications-revista,
+.title-overlay-publications-revista {
+  width: 100%;
+}
+
+.container-publications-revista {
+  padding: 0 2vh 0 2vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto, auto);
+}
+
+.item-publications-revista,
+.container-controls-publications-revista {
+  align-items: center;
+}
+
+.title-overlay-publications-revista {
+  background: linear-gradient(transparent, #00050a);
+  vertical-align: baseline;
+  z-index: 1;
+}
+
+.item-publications-revista {
+  height: 60vh;
+  position: relative;
+  flex-direction: column;
+  justify-content: end;
+  z-index: 0;
+  padding: 0 0 5vh 0;
+}
+
+.item-publications-revista,
+.title-publications-revista,
+.control-publications-revista {
+  cursor: pointer;
+}
+
+.item-publications-revista,
+.container-controls-publications-revista {
+  display: flex;
+}
+
+
+.title-overlay-publications-revista,
+.imagen-publications-revista {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.imagen-publications-revista,
+.image-control-publications-revista,
+.title-overlay-publications-revista {
+  height: 100%;
+}
+
+.title-publications-revista,
+.text-publications-revista {
+  z-index: 2;
+}
+
+.title-publications-revista {
+  font-size: 5vh;
+}
+
+.counter-publications-revista {
+  font-size: 3vh;
+}
+
+.title-publications-revista,
+.text-publications-revista,
+.counter-publications-revista {
+  color: var(--blanco);
+}
+
+.title-publications-revista {
+  font-weight: 700;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.text-publications-revista {
+  font-size: 2vh;
+}
+
+.container-controls-publications-revista {
+  justify-content: end;
+}
+
+.control-publications-revista {
+  width: 8vh;
+  height: 8vh;
+  padding: 1vh;
+  background: transparent;
+  border: none;
+}
+
+.image-control-publications-revista,
+.imagen-publications-revista {
+  object-fit: cover;
+}
+
+.counter-publications-revista {
+  font-weight: 600;
+}
+
+/* events  */
+.title-publications-revista:active {
+  transform: scale(1.05);
+}
+@media screen and (hover: hover) {
+  .title-publications-revista:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* responsive  */
+
+@media (max-width: 800px) {
+  .container-publications-revista {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, auto);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .title-publications-revista {
+    font-size: 4vh;
+  }
+
+  .text-publications-revista {
+    font-size: 1.9vh;
+  }
+
+  .container-publications-revista {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, auto);
+  }
+}

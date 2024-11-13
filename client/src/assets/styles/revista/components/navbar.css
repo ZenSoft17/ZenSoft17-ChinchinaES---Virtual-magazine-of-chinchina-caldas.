@@ -1,0 +1,247 @@
+/* navbar for revista  */
+
+.container-navbar-revista,
+.navbar-revista,
+.image-png-revista,
+.container-search-revista {
+  width: 100%;
+}
+
+.container-navbar-revista {
+  font-family: sans-serif, "poppins";
+}
+
+.navbar-revista,
+.list-nav-revista,
+.search-close-revista {
+  display: flex;
+}
+
+.navbar-revista,
+.search-close-revista {
+  align-items: center;
+}
+
+.navbar-revista {
+  height: 10vh;
+  justify-content: space-around;
+  position: relative;
+}
+
+.logo-revista-png,
+.search-active-revista {
+  width: 8vh;
+  height: 8vh;
+}
+
+.list-nav-revista {
+  width: 80%;
+  list-style: none;
+}
+
+.item-nav-revista,
+.cat-special-revista {
+  font-size: 2.2vh;
+}
+
+.item-nav-revista {
+  margin: 0 2vh 0 2vh;
+  color: var(--blanco);
+}
+
+.item-nav-revista,
+.search-active-revista,
+.search-close-revista {
+  cursor: pointer;
+}
+
+.item-nav-revista:nth-child(1) {
+  animation: scale_1 3s infinite linear;
+}
+
+.cat-special-revista {
+  font-weight: 600;
+  text-shadow: 1vh 1vh 2vh var(--shadow-naranja-50);
+}
+
+.search-active-revista,
+.button-menu-revista {
+  background: transparent;
+}
+
+.search-active-revista {
+  padding: 1.4vh;
+}
+
+.image-png-revista,
+.logo-revista-png {
+  object-fit: cover;
+}
+
+.logo-revista-png {
+  width: 15vh;
+  height: 15vh;
+}
+
+.container-search-revista,
+.input-search-revista,
+.search-close-revista {
+  height: 100%;
+}
+
+.container-search-revista,
+.submit-revista,
+.button-menu-revista {
+  display: none;
+}
+
+.input-search-revista {
+  width: 90%;
+  padding: 1em;
+  outline: none;
+  font-size: 3vh;
+}
+
+.input-search-revista,
+.search-close-revista {
+  color: var(--negro-mate);
+}
+
+.search-close-revista,
+.list-nav-revista {
+  justify-content: center;
+}
+
+.search-close-revista {
+  width: 10%;
+  font-size: 8vh;
+  background: var(--blanco);
+}
+
+.button-menu-revista {
+  width: 6vh;
+  height: 6vh;
+  padding: 0.8vh;
+}
+
+.button-menu-revista,
+.input-search-revista,
+.search-close-revista,
+.search-active-revista {
+  border: none;
+}
+
+/* events  */
+
+.scroll-navbar {
+  position: fixed !important;
+  border-bottom: 1px solid var(--gris);
+  background: var(--shadow-50);
+  box-shadow: 1em 1em 2em var(--shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+}
+
+.display-flex-revista {
+  display: flex !important;
+}
+
+.display-none-revista {
+  display: none !important;
+}
+
+.item-nav-revista:active {
+  color: var(--gris);
+}
+
+@media screen and (hover: hover) {
+  .item-nav-revista:hover {
+    color: #ffffffcd;
+  }
+}
+
+/* animations  */
+@keyframes scale_1 {
+  0% {
+    transform: scale(1.1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* responsive  */
+@media screen and (max-width: 1300px) {
+
+  .item-nav-revista {
+    margin: 0 1.5vh 0 1.5vh;
+    font-size: 2vh;
+  }
+
+  .cat-special-revista {
+    font-size: 2.1vh;
+  }
+
+  .search-active-revista {
+    width: 7vh;
+    height: 7vh;
+    padding: 1vh;
+  }
+}
+
+@media screen and (max-width: 950px) {
+
+  .item-nav-revista {
+    margin: 0 1vh 0 1vh;
+    font-size: 1.8vh;
+  }
+
+  .cat-special-revista {
+    font-size: 2vh;
+  }
+
+  .search-active-revista {
+    width: 6vh;
+    height: 6vh;
+    padding: 0.8vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-revista {
+    position: relative;
+    justify-content: end;
+  }
+
+  .logo-revista-png {
+    margin: 0 0 0 4vh;
+    position: absolute;
+    left: 0;
+  }
+
+  .list-nav-revista {
+    display: none;
+  }
+
+  .search-active-revista,
+  .button-menu-revista {
+    margin: 0 2vh 0 0;
+  }
+
+  .button-menu-revista {
+    display: flex;
+  }
+}

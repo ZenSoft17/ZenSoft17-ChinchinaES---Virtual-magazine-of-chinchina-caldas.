@@ -1,0 +1,243 @@
+/* styles event for dfc  */
+
+.section-event-dfc,
+.container-live-event-dfc,
+.container-counter-event-dfc,
+.container-certification-event-dfc,
+.image-card-certificacion-dfc,
+.container-calendar-event-dfc {
+  width: 100%;
+}
+
+.container-live-event-dfc,
+.section-event-dfc,
+.card-calendar-event-dfc,
+.card-certificacion-event-dfc {
+  flex-direction: column;
+}
+
+.section-event-dfc,
+.container-counter-event-dfc,
+.container-certification-event-dfc,
+.card-calendar-event-dfc,
+.card-count-number-event-dfc,
+.title-counter-event-dfc,
+.container-live-event-dfc,
+.card-certificacion-event-dfc {
+  display: flex;
+  align-items: center;
+}
+
+.title-certificacion-event-dfc,
+.title-counter-event-dfc,
+.text-certificacion-event-dfc,
+.text-count-event-dfc,
+.text-event-dfc,
+.title-event-dfc,
+.title-calender-event-dfc {
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.text-event-dfc,
+.text-certificacion-event-dfc {
+  font-size: 2.5vh;
+}
+
+.text-count-event-dfc,
+.text-event-dfc,
+.text-certificacion-event-dfc {
+  color: var(--gris);
+}
+
+.container-live-event-dfc {
+  display: none;
+}
+
+.iframe-live-event-dfc {
+  width: 80%;
+  height: 80vh;
+}
+
+.iframe-live-event-dfc,
+.card-calendar-event-dfc {
+  background: var(--blanco);
+}
+
+.card-calendar-event-dfc,
+.iframe-live-event-dfc {
+  border-radius: 2vh;
+}
+
+.container-counter-event-dfc,
+.container-live-event-dfc,
+.title-event-dfc {
+  margin: 10vh 0 10vh 0;
+}
+
+.container-counter-event-dfc,
+.card-calendar-event-dfc {
+  padding: 1em;
+}
+
+.title-counter-event-dfc,
+.title-event-dfc,
+.title-certificacion-event-dfc,
+.card-count-number-event-dfc {
+  color: var(--blanco);
+}
+
+.title-counter-event-dfc {
+  font-size: 25vh;
+  margin: 0 1vh 0 1vh;
+  text-shadow: -0em -0em 3em var(--blue-light);
+  position: relative;
+}
+
+.date-counter-event-dfc,
+.card-count-number-event-dfc {
+  font-size: 3vh;
+}
+
+.date-counter-event-dfc {
+  bottom: 0;
+  position: absolute;
+}
+
+.hr-counter-event-dfc {
+  width: 3vh;
+  height: 30vh;
+  margin: 0 10vh 0 10vh;
+  border: none;
+}
+
+.title-event-dfc {
+  font-size: 8vh;
+  text-shadow: -0em -0em 3em var(--naranja);
+}
+
+.container-calendar-event-dfc {
+  display: grid;
+  padding: 0.5em 1em;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, auto);
+  gap: 10px;
+}
+.card-count-number-event-dfc,
+.container-counter-event-dfc,
+.title-counter-event-dfc,
+.container-live-event-dfc {
+  justify-content: center;
+}
+
+.card-count-number-event-dfc {
+  font-weight: 900;
+}
+
+.title-calender-event-dfc,
+.title-certificacion-event-dfc {
+  margin: 2vh 0 2vh 0;
+}
+
+.text-count-event-dfc {
+  font-size: 2.2vh;
+}
+
+.container-certification-event-dfc {
+  margin: 0 0 10vh 0;
+  padding: 0.2em 0.4em 0.2em 0.4em;
+  justify-content: space-around;
+}
+
+
+.container-image-card-certificacion-dfc,
+.card-count-number-event-dfc {
+  width: 8vh;
+  height: 8vh;
+  border-radius: 50%;
+}
+
+.container-image-card-certificacion-dfc {
+  padding: 2vh;
+}
+
+
+.container-image-card-certificacion-dfc,
+.hr-counter-event-dfc,
+.card-count-number-event-dfc {
+  background: var(--blue-light);
+}
+
+.image-card-certificacion-dfc {
+  height: 100%;
+  object-fit: cover;
+}
+
+.title-certificacion-event-dfc {
+  font-size: 4vh;
+}
+
+.container-live-event-dfc-change{
+  display: flex !important;
+}
+
+.container-counter-event-dfc-change{
+  display: none;
+}
+/* responsive */
+@media screen and (max-width: 900px) {
+  .container-certification-event-dfc {
+    display: block;
+    padding: 1em;
+  }
+
+  .container-calendar-event-dfc {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, auto);
+  }
+
+  .card-certificacion-event-dfc,
+  .container-counter-event-dfc {
+    width: 100%;
+    flex-direction: column;
+  }
+  .card-certificacion-event-dfc {
+    margin: 5vh 0 5vh 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .title-event-dfc {
+    font-size: 6vh;
+  }
+
+  .hr-counter-event-dfc {
+    width: 80%;
+    height: 3vh;
+  }
+
+  .title-counter-event-dfc {
+    margin: 2vh 0 2vh 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .container-calendar-event-dfc {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .container-calendar-event-dfc {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(9, auto);
+  }
+}
+
+@media (max-width: 500px) {
+  .container-calendar-event-dfc {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(11, auto);
+  }
+}

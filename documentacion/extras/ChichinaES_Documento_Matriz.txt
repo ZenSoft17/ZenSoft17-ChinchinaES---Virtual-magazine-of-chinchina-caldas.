@@ -1,0 +1,167 @@
+ChichinaES : 
+
+OBJECTIVO GENERAL : 
+   
+Desarrollar e implementar un aplicativo web aplicando los conceptos de transmedia que sirva tanto para una revista virtual como para la realización de la feria de la cultura digital. El objetivo es proporcionar una plataforma en la cual los usuarios puedan acceder a la información publicada por autores invitados y también inscribirse para participar en la feria. El aplicativo busca crear un medio para dar a conocer la feria de la cultura digital, permitiendo a los autores realizar publicaciones detalladas con diversos medios como texto, imágenes y videos, siguiendo las reglas del sitio y bajo su propia responsabilidad. Para la feria de la cultura digital, el objetivo es mostrar información general, el evento en sí, permitir a los interesados inscribirse, mostrar los proyectos propuestos junto con su información y estado, y proporcionar información sobre la franja virtual y sus contenidos. En la revista digital, se planea que las publicaciones sean accesibles para todo el público y que los autores puedan crear y gestionar sus publicaciones desde sus perfiles.
+
+REQUERMIENTOS : 
+
+funcionales
+
+- el sistema debe funcionar en torno a un panel de administración en cual se pueda dar acceso a los autores y gestionar el contenido de la feria.
+- el sistema debe contar con zonas especificas para publicidad.
+- el sistema debe permitir clasificar los contenidos de la revista por categorías
+- el sistema debe permitir agregar una categoría especial al mes, de la que los autores puedan escribir
+- el sistema debe permitir poder generar cuentas para los autores, con dicho rol.
+- el sistema debe permitir al autor poder tener un perfil del usuario donde ver su información.
+- el sistema debe permitir al autor poder crear y gestionar sus publicaciones, dentro del perfil.
+- el sistema debe tener un sistema de edición avanzado para creación de las publicaciones para editar el texto "color,tamaño,negrilla,fuente y tipo", contenedor "imagen de fondo o color de fondo", elementos "líneas, tablas, listas, imágenes, texto y videos" y alineacion del contenido.
+- el sistema debe incluir la capacidad para que el autor selecione si publicar o no.
+- el sistema debe separar las secciones por categorias para facilitar la navegacion al usuario
+- el sistema debe permitir al autor ingresar con su cuenta mediante un codigo unico que le enviara al correo eletronico con el cual podra ingresar.
+- el sistema debe guardar la session del autor para que no se cierre, hasta que el autor lo desee.
+- el sistema debe cambiar la interfaz brevemente cuando el autor este logeado.
+- el sistema debe mostrar los patrocinadores en el home.
+- el sistema debe contar con una seccion para manejar el evento de la feria de cultura digital.
+- el sistema debe contrar con subsecciones donde de la seccion de la cultura digital para manejar las diferentes etapas : la informacion, el evento, las inscripciones, los proyectos y la franja virtual.
+- el sistema debe contar con  la cateristica de que la informacion de la feria de cultura digital sea editable para ganarantizar el evento año tras año.
+- el sistema debe contar con un panel de administracion para gestionar usuarios, patrocinadores y la feria de la cultura digital
+- el sistema en el panel de administracion debe contar con un perfil que muestra la informacion del administrador.
+- el sistema debera contar con unos terminos y condiciones legales para la revista digital y la feria de la cultura digital.
+- el sistema deberá contar con una zona para vender planes publicitarios.
+- el sistema detetara si no hay contenido en cualquier sección con contenido editable en la feria de la cultura digital y no la mostrara.
+- los usuarios que entren al sitio no tendrán posibilidad de crear su propia cuenta, para tener una cuenta tiene que ser creada y dada por el administrador.
+- la cuenta del administrador será única y no se podrá borrar
+- el sistema tendrá todas la cuentas de rede sociales de la empresa en el pie de pagina
+
+
+
+
+no funcionales 
+
+- el sistema debe ser apdatable a todos los tamaños de pantalla desde 300px hasta infinito.
+- el sistema debe contantar con una seguridad por consulta, verificaciones y comprobatorias.
+- el codigo del sistema debe tener buenas praticas y ser comprensible.
+- el sistema contar con una documentacion para los futuros desarrolladores.
+- el sistema permitir ser actualizable facilmente por cualquier persona con el conocimiento necesario.
+- el sistema debe tener un diseño amigable, atrativo, moderno, tecnologico y futurista.
+- el sistema debe contrar con esta paleta de colores en su diseño :  
+ - azul oscuro moderno
+ - negro mate
+ - amarillo 
+ - naranja
+ - blanco
+ - gris
+ - morado
+ - rosa 
+- el sistema debe contar con una api rest, la cual pueda consumida por cualquier aplicación o sitio web.
+- el sistema debe tener una seguridad robusta en las consulta del api rest.
+- el diseño del  sistema deberá basarse en la publicación de la alcaldía de Chinchiná.
+
+PLANTEAMIENTO TECNICO
+
+api rest : 
+  -  
+la creación de un api para el proyecto es importante ya que se establece un punto de conexión entre la base de datos y el sitio web, la api rest cargara con todas las operación pesadas del sistema lo que permite aligerar la carga que soporta el navegador, por lo que es mas eficiente para el usuario final.
+
+el api además garantiza un punto de conexión durante mucho tiempo el cual no solo funcionara para el sitio web, si no que también sirve para la crear de otrps sitios web o plataformas que necesiten la información de la base de datos.
+
+ChinchinaES :
+ -
+ChinchinaES será el sitio a desarrollo el cual contara con un panel de administración para su gestión, contara con las herramientas como la revista digital y la feria de la cultura digital.
+
+
+HERRAMIENTAS 
+
+- las herramientas para llevar a cabo el proyecto : 
+
+  - frontend : HTML, css, js
+  - librerías : react y otras
+
+  - backend : php vanilla y phpmailer.
+
+  - base de datos : sql - MARIA db
+
+  explicacion : 
+- el desarrollo frontend se llevara a cabo desde 0, con el cual para cuidar la marca de empresa se usara css vanilla para el diseño, la estructura se realizara con react.js, la cual es una Liberia de js, que permite realizar un desarrollo mas solido, rápido y eficiente con sus características de reactividad el sitio no necesitara recargarse para mostrar nueva información al usuario.
+
+- el desarrollo backend se realizara con php vanilla por el propósito de lograr un diseño con alto de grado de personalización y detalle y para enviar correos eletronicos desde la api.
+
+- el desarrollo de bases de datos con sql con el motor mariaDB.
+
+
+RAIZ : 
+ 
+ ChinchinaES -
+
+    home - (zona donde se mostrara la marca, los términos, eslogans, patrocinadores y zona de publicidad)-
+
+         revista digital - (en esta zona de visualizaran todas las categorías, de las publicaciones de los autores)
+           - zona de contenido -
+                - zonas por categorías (zona donde se visualizara solo una categoría)
+    
+                (perfil, acceso a la información del usuario, estudio de gestión de publicaciones)
+                (zona de inicio de sesión mediante código y confirmación por correo electrónico)
+
+        feria de la cultura digital -
+           - zona de información general ( zona se visualizara la información general como objectivos, visión, misión, patrocinadores, sede, 
+              eslogans y etc).
+                - zona del evento (zona donde se podrá visualizar la información del evento como un contador contando el tiempo para que inicie, 
+                  un cronograma de las actividades, directo del evento, publicidad del evento, etc).
+                - zona de inscripciones (zona donde se visualizara información acerca la inscripción al evento, premios, etc y tendrán un formulario 
+                  para su inscripcion).
+                - zona de proyectos (zona donde se visualizaran los proyectos subidos y aprobados, se mostran se estado "verde,amarillo o rojo" 
+                  y información de cada proyecto )
+                - zona de la franja virtual  (en esta zona cada dia se podra visualzar el directo de la franja virtutal, informacion, como invitados,
+                  cronograma y temas a tratar).
+        publicidad -
+                - por definir (opciones por suscripción o sitio permanente).
+        Términos y condiciones : 
+                - información legal sobre el contenido y las herramientas.
+
+ Dashboard -
+
+     login -
+        (inicio de sesion)
+     perfil -
+        (información del administrador)
+     usuario -
+        - gestión de cuentas de usuarios (crear, editar y banear usuarios).
+     patrocinadores -
+        - gestión de patrocinadores (por ahora solo marca y foto).
+     gestión de la feria de la cultura digital -
+        - gestión de la información general del evento
+        - gestión de la planeación, actividades y cronograma
+        - gestión de las inscripciones 
+        - gestión de los proyectos (aceptar una inscripción y convertirla en un proyecto con un rango de desarrollo).
+        - gestión de la franja de la cultura digital (información, cronograma, directo, temas, invitados) cada dia.
+
+BASE DE DATOS :
+
+usuarios: usu_id, det_id, pro_id, rol, nombre, apellido, correo, contraseña, foto_perfil.
+detalles: det_id, fecha_nacimiento, direccion, profesion, genero, fecha, edad, telefono, colegio, grado.
+proyecto: pro_id, nombre, descripcion, tipo, proyecto, estado.
+patrocinadores: pat_id, usu_id, foto, empresa.
+eslogans: esl_id, eslogan.
+feria: feria_id, esl_id, nombre, año, objetivos, mision, vision, razon, contador_inicio, sede.
+evento: evento_id, feria_id, nombre, descripcion, fecha_hora, enlace_transmision, cronograma.
+cultura_digital: franja_id, feria_id, nombre, descripcion, fecha_hora, enlace_transmision, invitados, cronograma.
+publicaciones: pub_id, autor_id, titulo, contenido, categoria_id, fecha_publicacion, estado, calificación.
+formato_edicion: for_id, pub_id, foto_fondo, color_contenedor, color_titulo, color_subtitulo, color_texto, fuente, tamano_texto, negrilla.
+categorías: cat_id, nombre, descripción.
+códigos : cod_id, código.
+
+
+PUNTOS A TRATAR -
+
+ Tiempo de desarrollo : el tiempo de desarrollo esta planteado para un mes.
+ puntos complicados : el sistema de edición del contenido para los autores y el panel de administración.
+ estimaciones : el sistema de edición dentro de un mes puede que no este terminado en su totalidad
+ propuestas de valor : el Admin se podrá realizar en el api, lo que le daría ligereza al desarrollo.
+ para después : zona de la publicidad, banco de imágenes y rutas culturales.
+
+
+
+
+ 
+ 

@@ -1,0 +1,156 @@
+/* styles for home footer  */
+
+.footer-home,
+.container-links-home,
+.container-by-home,
+.by-home {
+  width: 100%;
+}
+.footer-home {
+  height: auto;
+  background: var(--negro-mate);
+  border: none;
+  border-top: 1px solid var(--gris);
+}
+.container-links-home {
+  margin: 8vh 0 0 0;
+  padding: 0 4em 0 4em;
+}
+
+.container-links-home,
+.list-networks-home,
+.by-home {
+  display: flex;
+}
+
+.list-footer-home,
+.list-networks-home {
+  list-style: none;
+}
+
+.list-footer-home {
+  width: 30%;
+  text-align: center;
+}
+
+.item-footer-title-home {
+  font-size: 2.2vh;
+}
+
+.item-footer-title-home,
+.by-text-home {
+  color: var(--blanco);
+}
+
+.item-footer-home {
+  margin: 0.5vh 0 0.5vh 0;
+}
+
+.item-footer-home,
+.text-footer-home {
+  color: var(--gris);
+}
+
+.list-networks-home {
+  width: 40%;
+  justify-content: space-around;
+}
+
+.item-network-home {
+  width: 6vh;
+}
+
+.by-png-home {
+  width: 15vh;
+  height: 15vh;
+}
+
+.item-network-home {
+  height: 6vh;
+  padding: 1vh;
+  border-radius: 50%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item-network-home,
+.by-home {
+  align-items: center;
+}
+
+.item-nework-png-home {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.container-by-home {
+  margin: 2vh 0 0 0;
+}
+
+.by-home {
+  margin: 1vh 0 1vh 0;
+}
+
+.by-png-home,
+.text-footer-home {
+  margin: 0 0 0 5vh;
+}
+
+.by-text-home{
+  margin:  0 0 0 1vh;
+  font-size: 2.6vh;
+  font-weight: 600;
+}
+
+.text-footer-home,
+.item-footer-home {
+  font-size: 2vh;
+}
+
+/* event */
+.item-footer-home:active {
+  transform: scale(1.1);
+}
+@media screen and (hover: hover) {
+  .item-footer-home:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* responsive  */
+@media screen and (max-width: 800px) {
+  .item-footer-title-home {
+    font-size: 2.9vh;
+  }
+
+  .item-footer-home {
+    font-size: 2.2vh;
+  }
+  .item-network-home {
+    width: 6vh;
+    height: 6vh;
+    padding: 0.5vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container-links-home {
+    display: block;
+  }
+
+  .list-footer-home,
+  .list-networks-home {
+    width: 100%;
+  }
+  .list-footer-home {
+    margin: 5vh 0 5vh 0;
+    text-align: center;
+  }
+  .by-text-home {
+    font-size: 2.5vh;
+  }
+  .footer-home {
+    background-size: 30vh;
+  }
+}

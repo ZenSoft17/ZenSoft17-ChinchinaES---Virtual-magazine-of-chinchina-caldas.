@@ -1,0 +1,171 @@
+/* styles navbar dfc */
+
+.header-dfc,
+.navbar-dfc {
+  width: 100%;
+}
+
+.navbar-dfc,
+.list-navigate-dfc,
+.list-networks-dfc {
+  display: flex;
+}
+
+.navbar-dfc {
+  height: 12vh;
+  position: relative;
+  align-items: center;
+}
+
+.button-menu-dfc {
+  width: 10vh;
+}
+
+.logo-png-dfc,
+.image-navbar-dfc {
+  object-fit: cover;
+}
+
+.image-navbar-dfc {
+  width: 4vh;
+}
+
+.logo-png-dfc {
+  width: 20vh;
+  height: 20vh;
+}
+
+.list-navigate-dfc,
+.list-networks-dfc {
+  list-style: none;
+}
+
+.list-navigate-dfc {
+  width: 50%;
+  justify-content: space-around;
+}
+
+.item-navigate-dfc {
+  color: var(--blanco);
+  font-size: 2.2vh;
+  font-weight: 600;
+}
+
+.list-networks-dfc,
+.button-menu-dfc {
+  position: absolute;
+}
+
+.list-networks-dfc {
+  right: 0;
+}
+
+.item-networks-dfc {
+  margin: 0 1vh;
+  width: 8vh;
+  padding: 2vh;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-menu-dfc {
+  padding: 1vh;
+  right: 5px;
+  top: 5px;
+  border: none;
+  background: transparent;
+  display: none;
+}
+
+/* events */
+
+.navbar-dfc-scroll {
+  position: fixed !important;
+  border-bottom: 1px solid var(--gris);
+  background: var(--shadow-50);
+  box-shadow: 1em 1em 2em var(--shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+}
+
+.item-navigate-dfc:active {
+  transform: scale(1.05);
+}
+
+@media screen and (hover: hover) {
+  .item-navigate-dfc:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* responsive */
+
+@media screen and (max-width: 900px) {
+  .list-navigate-dfc {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .navbar-dfc-change,
+  .list-navigate-dfc-change {
+    flex-direction: column;
+  }
+
+  .image-navbar-dfc {
+    width: 7vh;
+  }
+
+  .navbar-dfc-change {
+    height: auto;
+    flex-direction: column;
+    padding: 0 0 4vh 0;
+  }
+
+  .list-navigate-dfc-change,
+  .list-networks-dfc-change {
+    width: 100%;
+  }
+
+  .list-navigate-dfc-change {
+    margin: 10vh 0 0 0;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .list-navigate-dfc,
+  .list-networks-dfc {
+    display: none;
+  }
+
+  .list-networks-dfc-change {
+    position: static;
+    justify-content: center;
+    display: flex;
+  }
+
+  .item-networks-dfc {
+    margin: 0 2vh;
+  }
+
+  .item-navigate-dfc {
+    margin: 1vh 0;
+  }
+
+  .logo-png-dfc {
+    width: 15vh;
+    height: 15vh;
+    position: absolute;
+    left: 2vh;
+    top: -1.5vh;
+  }
+
+  .button-menu-dfc {
+    display: block;
+  }
+
+  .rotate-menu-navbar-dfc {
+    transform: rotate(180deg);
+  }
+}

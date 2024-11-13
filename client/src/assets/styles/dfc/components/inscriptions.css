@@ -1,0 +1,305 @@
+/* styles inscriptions for dfc */
+
+.section-inscriptions-dfc,
+.container-card-info-inscripcions-dfc,
+.container-date-card-info-inscriptions-dfc,
+.item-card-info-inscriptions-dfc,
+.form-inscriptions-dfc,
+.inputs-zone-inscriptions-dfc,
+.inputs-terms-group-inscriptions-dfc,
+.label-terms-inscriptions-dfc {
+  display: flex;
+}
+
+.inputs-group-inscriptions-dfc,
+.label-inscriptions-dfc,
+.input-inscriptions-dfc,
+.section-inscriptions-dfc,
+.container-card-info-inscripcions-dfc,
+.container-date-card-info-inscriptions-dfc,
+.item-card-info-inscriptions-dfc,
+.inputs-terms-group-inscriptions-dfc,
+.inputs-zone-inscriptions-dfc,
+.label-terms-inscriptions-dfc,
+.input-file-inscriptions-dfc {
+  width: 100%;
+}
+
+.container-date-card-info-inscriptions-dfc,
+.section-inscriptions-dfc,
+.item-card-info-inscriptions-dfc,
+.inputs-zone-inscriptions-dfc,
+.form-inscriptions-dfc,
+.label-terms-inscriptions-dfc {
+  align-items: center;
+}
+
+.section-inscriptions-dfc,
+.inputs-zone-inscriptions-dfc,
+.form-inscriptions-dfc {
+  flex-direction: column;
+}
+
+.title-inscriptions-dfc,
+.title-form-inscriptions-dfc {
+  color: var(--blue-light);
+}
+
+.sub-title-card-info-inscriptions-dfc,
+.label-inscriptions-dfc {
+  font-size: 1.8vh;
+}
+
+.title-inscriptions-dfc,
+.title-form-inscriptions-dfc {
+  font-size: 10vh;
+  text-shadow: 0 0 100em var(--blue-light);
+}
+
+.title-inscriptions-dfc,
+.container-card-info-inscripcions-dfc {
+  margin: 20vh 0 10vh 0;
+}
+
+.title-form-inscriptions-dfc {
+  margin: 5vh 0 10vh 0;
+}
+
+.title-inscriptions-dfc,
+.text-inscriptions-dfc,
+.title-card-info-inscriptions-dfc,
+.title-form-input-inscriptions-dfc,
+.text-card-info-inscriptions-dfc {
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.text-card-info-inscriptions-dfc,
+.text-inscriptions-dfc,
+.sub-title-card-info-inscriptions-dfc,
+.text-inscriptions-dfc {
+  color: var(--gris);
+}
+
+.text-inscriptions-dfc {
+  font-size: 2.5vh;
+}
+
+.text-inscriptions-dfc {
+  width: 80%;
+}
+
+.container-card-info-inscripcions-dfc {
+  justify-content: space-around;
+}
+
+.container-date-card-info-inscriptions-dfc,
+.card-info-inscriptions-dfc,
+.input-inscriptions-dfc,
+.submit-inscriptions-dfc,
+.container-input-file-inscriptions-dfc,
+.form-inscriptions-dfc {
+  border-radius: 2vh;
+}
+
+.card-info-inscriptions-dfc {
+  border-top: 1vh solid var(--blue-light);
+  padding: 0.5em;
+}
+
+.card-info-inscriptions-dfc:nth-child(1),
+.card-info-inscriptions-dfc:nth-child(3) {
+  width: 20%;
+}
+.card-info-inscriptions-dfc:nth-child(2) {
+  width: 50%;
+}
+
+.month-container-inscriptions-dfc,
+.year-container-inscriptions-dfc,
+.title-card-info-inscriptions-dfc,
+.item-card-info-inscriptions-dfc {
+  color: var(--blanco);
+}
+
+.container-date-card-info-inscriptions-dfc,
+.title-card-info-inscriptions-dfc,
+.title-form-input-inscriptions-dfc,
+.item-card-info-inscriptions-dfc,
+.inputs-group-inscriptions-dfc,
+.submit-inscriptions-dfc,
+.inputs-terms-group-inscriptions-dfc {
+  margin: 2vh 0 2vh 0;
+}
+
+.title-card-info-inscriptions-dfc,
+.title-form-input-inscriptions-dfc {
+  font-size: 3vh;
+}
+
+.container-date-card-info-inscriptions-dfc,
+.container-input-file-inscriptions-dfc {
+  height: 6vh;
+}
+
+.container-date-card-info-inscriptions-dfc {
+  border: 0.5px solid var(--gris);
+  position: relative;
+}
+
+.day-container-inscriptions-dfc,
+.month-container-inscriptions-dfc {
+  position: absolute;
+}
+
+.day-container-inscriptions-dfc {
+  font-weight: 800;
+}
+
+.day-container-inscriptions-dfc {
+  left: 2vh;
+  color: var(--naranja);
+}
+
+.month-container-inscriptions-dfc {
+  left: 8vh;
+}
+
+.text-card-info-inscriptions-dfc,
+.item-card-info-inscriptions-dfc,
+.month-container-inscriptions-dfc {
+  font-size: 2.2vh;
+}
+
+.list-card-info-inscriptions-dfc {
+  list-style: none;
+}
+
+.item-card-info-inscriptions-dfc {
+  font-weight: 500;
+}
+
+.image-card-info-inscriptions-dfc {
+  width: 4vh;
+  margin: 0 2vh 0 0;
+}
+
+.form-inscriptions-dfc {
+  width: 35%;
+  margin: 0 0 20vh 0;
+  background: var(--blanco);
+  filter: drop-shadow(0.5em 0.5em 4em var(--blue-light-50));
+}
+
+.inputs-zone-inscriptions-dfc {
+  padding: 0.5vh 3vh 0.5vh 3vh;
+}
+
+.label-terms-inscriptions-dfc {
+  margin: 0 0 1vh 0;
+  font-size: 2vh;
+}
+
+.span-label-terms-inscriptions-dfc {
+  width: 90%;
+}
+
+.submit-inscriptions-dfc,
+.input-inscriptions-dfc,
+.input-checkbox-inscriptions-dfc,
+.container-input-file-inscriptions-dfc {
+  border: 0.5px solid var(--negro-mate);
+  background: transparent;
+}
+
+.submit-inscriptions-dfc,
+.input-inscriptions-dfc {
+  padding: 1vh 2vh;
+}
+
+.inputs-terms-group-inscriptions-dfc {
+  justify-content: center;
+}
+
+.input-checkbox-inscriptions-dfc,
+.container-input-file-inscriptions-dfc,
+input[type="date"],
+.submit-inscriptions-dfc {
+  cursor: pointer;
+}
+.input-checkbox-inscriptions-dfc {
+  width: 10%;
+  margin: 0 0 0 3vh;
+}
+
+.input-inscriptions-dfc {
+  outline: none;
+}
+
+.container-input-file-inscriptions-dfc {
+  width: 6vh;
+  background: url("../../../img/file.png") no-repeat center center / 80%;
+  margin: 1vh auto 1vh auto;
+}
+
+.input-file-inscriptions-dfc {
+  height: 100%;
+  opacity: 0;
+}
+
+/* events */
+.submit-inscriptions-dfc:active {
+  transform: scale(1.05);
+}
+
+@media screen and (hover: hover) {
+  .submit-inscriptions-dfc:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* responsive  */
+@media screen and (max-width: 900px) {
+  .title-inscriptions-dfc,
+  .title-form-inscriptions-dfc {
+    font-size: 8vh;
+  }
+
+  .title-inscriptions-dfc {
+    margin: 10vh 1vh 10vh 1vh;
+  }
+
+  .title-form-inscriptions-dfc {
+    margin: 5vh 0 5vh 0;
+  }
+
+  .container-card-info-inscripcions-dfc,
+  .form-inscriptions-dfc {
+    display: block;
+  }
+
+  .container-card-info-inscripcions-dfc {
+    padding: 0.4em;
+  }
+
+  .card-info-inscriptions-dfc {
+    margin: 4vh 0 4vh 0;
+  }
+
+  .card-info-inscriptions-dfc {
+    border: 0.5vh solid var(--blue-light);
+  }
+
+  .card-info-inscriptions-dfc:nth-child(1),
+  .card-info-inscriptions-dfc:nth-child(3),
+  .card-info-inscriptions-dfc:nth-child(2),
+  .form-inscriptions-dfc,
+  .inputs-zone-inscriptions-dfc {
+    width: 100%;
+  }
+
+  .form-inscriptions-dfc {
+    border-radius: 0;
+  }
+}

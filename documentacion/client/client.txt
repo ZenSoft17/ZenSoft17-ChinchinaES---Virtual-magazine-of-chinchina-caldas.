@@ -1,0 +1,154 @@
+La guia - ChinchinaES
+
+.
+├── app.jsx
+├── assets
+│   ├── fonts
+│   │   ├── Kanit-Regular.ttf
+│   │   └── Poppins-Regular.ttf
+│   ├── img
+│   │   ├── BookMenu.png
+│   │   ├── ChinchinaES.png
+│   │   ├── CorpoSer.png
+│   │   ├── EsferaCafe.png
+│   │   ├── MusicMenu.png
+│   │   ├── arrow-left.png
+│   │   ├── arrow-right.png
+│   │   ├── arts.png
+│   │   ├── book.png
+│   │   ├── boy.png
+│   │   ├── brain-bg.png
+│   │   ├── brand.png
+│   │   ├── cert.png
+│   │   ├── cinema.png
+│   │   ├── culture.png
+│   │   ├── facebook_1.png
+│   │   ├── fair.png
+│   │   ├── file.png
+│   │   ├── fire.svg
+│   │   ├── gastronomy.png
+│   │   ├── logo.png
+│   │   ├── lost.svg
+│   │   ├── mail.png
+│   │   ├── menu-vertical.png
+│   │   ├── menu.png
+│   │   ├── music.png
+│   │   ├── number-sign.png
+│   │   ├── old.png
+│   │   ├── persons.png
+│   │   ├── quotation-mark.png
+│   │   ├── robot.png
+│   │   ├── search.png
+│   │   ├── special.png
+│   │   ├── tik-tok.png
+│   │   ├── twitter.png
+│   │   ├── whatsapp.png
+│   │   ├── world.png
+│   │   └── youtube.png
+│   ├── mp4
+│   │   └── fondo_circuits.mp4
+│   └── styles
+│       ├── dfc
+│       │   ├── components
+│       │   │   ├── event.css
+│       │   │   ├── inscriptions.css
+│       │   │   ├── introduction.css
+│       │   │   ├── navbar.css
+│       │   │   ├── projects.css
+│       │   │   ├── slider.css
+│       │   │   ├── slogan.css
+│       │   │   └── stripe.css
+│       │   └── dfc.css
+│       ├── global.css
+│       ├── home
+│       │   ├── components
+│       │   │   ├── footer.css
+│       │   │   └── navbar.css
+│       │   └── home.css
+│       ├── lost.css
+│       ├── revista
+│       │   ├── components
+│       │   │   ├── carousel.css
+│       │   │   ├── category.css
+│       │   │   ├── content.css
+│       │   │   ├── menu_vertical.css
+│       │   │   ├── navbar.css
+│       │   │   ├── publication.css
+│       │   │   ├── publications.css
+│       │   │   └── search.css
+│       │   └── revista.css
+│       └── terms
+│           └── terms.css
+├── components
+│   ├── custom_hooks
+│   │   ├── useCarousel.jsx
+│   │   ├── useCarousel_infinite.jsx
+│   │   ├── useCounter.jsx
+│   │   ├── useFuntions.jsx
+│   │   ├── useMathRamdon.jsx
+│   │   ├── useMouseEvent.jsx
+│   │   ├── useNavigation.jsx
+│   │   ├── usePagination.jsx
+│   │   ├── useScroll.jsx
+│   │   └── useSearch.jsx
+│   ├── elements
+│   │   └── button.jsx
+│   ├── fetch
+│   │   ├── actions
+│   │   │   ├── get
+│   │   │   │   ├── useGetAdvertising.js
+│   │   │   │   ├── useGetDfc.js
+│   │   │   │   ├── useGetHashtags.js
+│   │   │   │   ├── useGetImageBank.js
+│   │   │   │   ├── useGetRevista.js
+│   │   │   │   └── useGetVideoBank.js
+│   │   │   └── post
+│   │   │       ├── usePostElementsPublication.js
+│   │   │       ├── usePostFormInscriptions.js
+│   │   │       ├── usePostPublication.js
+│   │   │       ├── usePostPublicationAuthor.js
+│   │   │       └── usePostSearch.js
+│   │   └── useFetch.jsx
+│   ├── global_context
+│   │   ├── context.jsx
+│   │   └── provider.js
+│   └── utils
+├── imports
+│   └── index.js
+└── pages
+    ├── dfc
+    │   ├── components
+    │   │   ├── coming.jsx
+    │   │   ├── event.jsx
+    │   │   ├── inscriptions.jsx
+    │   │   ├── introduction.jsx
+    │   │   ├── navbar.jsx
+    │   │   ├── projects.jsx
+    │   │   └── stripe.jsx
+    │   ├── dfc.jsx
+    │   └── utils
+    │       ├── carousel_infinite.jsx
+    │       ├── form.jsx
+    │       ├── slider.jsx
+    │       └── slogan.jsx
+    ├── home
+    │   ├── componets
+    │   │   ├── footer.jsx
+    │   │   └── navbar.jsx
+    │   └── home.jsx
+    ├── lost.jsx
+    ├── revista
+    │   ├── components
+    │   │   ├── category.jsx
+    │   │   ├── principal.jsx
+    │   │   ├── publication.jsx
+    │   │   ├── search.jsx
+    │   │   └── utils
+    │   │       ├── carousel.jsx
+    │   │       ├── navbar.jsx
+    │   │       ├── publications.jsx
+    │   │       └── publications_author.jsx
+    │   └── revista.jsx
+    └── terms
+        ├── components
+        └── terms.jsx
